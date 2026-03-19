@@ -83,7 +83,16 @@ function isActive(href: string) {
   <!-- Mobile menu -->
   <div class="nav-mobile">
     {navLinks.map((link) => (
-      <a href={link.href} data-nav-link class="nav-mobile__link">{link.label}</a>
+      link.hasDropdown && link.children ? (
+        <div class="nav-mobile__group">
+          <span class="nav-mobile__heading">{link.label}</span>
+          {link.children.map((child: any) => (
+            <a href={child.href} data-nav-link class="nav-mobile__link nav-mobile__link--sub">{child.label}</a>
+          ))}
+        </div>
+      ) : (
+        <a href={link.href} data-nav-link class="nav-mobile__link">{link.label}</a>
+      )
     ))}
     <a href="/pricing" class="btn btn--primary">Start building →</a>
   </div>
@@ -263,6 +272,26 @@ function isActive(href: string) {
 
   .nav-mobile__link:hover {
     background: var(--color-surface-1);
+  }
+
+  .nav-mobile__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-mobile__heading {
+    padding: 10px var(--space-md);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .nav-mobile__link--sub {
+    padding-left: calc(var(--space-md) + 12px);
+    font-size: 14px;
   }
 
   @media (max-width: 900px) {
