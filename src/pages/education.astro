@@ -1,0 +1,342 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import educationHero from '../assets/images/education-hero.jpg';
+---
+
+<BaseLayout
+  title="Education — AI tools built for learning"
+  description="Torii for Education. Empowering students, educators, and institutions with accessible AI tools that enhance learning and research."
+>
+  <!-- ─── Hero ─── -->
+  <section class="edu-hero section">
+    <div class="container">
+      <div class="edu-hero__inner gsap-fade-up">
+        <div class="edu-hero__content">
+          <div class="section-label">Education</div>
+          <h1 class="text-hero">
+            AI tools built<br />
+            <span class="text-accent">for learning.</span>
+          </h1>
+          <p class="text-large" style="color: var(--color-text-secondary); margin: var(--space-md) 0 var(--space-xl); max-width: 500px;">
+            Torii helps students research, educators teach, and institutions deploy AI responsibly. Special pricing available for qualifying institutions.
+          </p>
+          <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap;">
+            <a href="/" class="btn btn--primary">Apply for education access →</a>
+            <a href="/" class="btn btn--ghost">Learn more</a>
+          </div>
+        </div>
+        <div class="edu-hero__image gsap-parallax">
+          <img
+            src={educationHero.src}
+            alt="Students collaborating and learning together"
+            width="700"
+            height="500"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Audience Paths ─── -->
+  <section class="section edu-audiences">
+    <div class="container">
+      <h2 class="text-h2 gsap-fade-up" style="margin-bottom: var(--space-xl);">Built for every role in education</h2>
+      <div class="edu-audience-cards gsap-stagger">
+        <!-- Students -->
+        <div class="edu-audience-card">
+          <div class="edu-audience-card__icon">🎓</div>
+          <h3 class="edu-audience-card__title">Students</h3>
+          <p class="edu-audience-card__desc">
+            Accelerate your research and learning with AI-powered tools. Summarize papers, generate study guides, and explore complex topics interactively.
+          </p>
+          <ul class="edu-audience-card__features">
+            <li>AI research assistant</li>
+            <li>Paper summarization</li>
+            <li>Study guide generation</li>
+            <li>Citation support</li>
+          </ul>
+          <a href="/" class="btn btn--ghost" style="margin-top: var(--space-lg);">Get student access →</a>
+        </div>
+
+        <!-- Educators -->
+        <div class="edu-audience-card edu-audience-card--featured">
+          <div class="edu-audience-card__icon">🏫</div>
+          <h3 class="edu-audience-card__title">Educators</h3>
+          <p class="edu-audience-card__desc">
+            Design AI-enhanced curricula and automate administrative tasks. Create personalized learning experiences for every student in your class.
+          </p>
+          <ul class="edu-audience-card__features">
+            <li>Lesson plan generator</li>
+            <li>Assignment grading assist</li>
+            <li>Student progress insights</li>
+            <li>Classroom AI workflows</li>
+          </ul>
+          <a href="/" class="btn btn--primary" style="margin-top: var(--space-lg);">Get educator access →</a>
+        </div>
+
+        <!-- Institutions -->
+        <div class="edu-audience-card">
+          <div class="edu-audience-card__icon">🏛️</div>
+          <h3 class="edu-audience-card__title">Institutions</h3>
+          <p class="edu-audience-card__desc">
+            Deploy Torii campus-wide with institutional licensing. Private cloud options, LMS integrations, and compliance with FERPA requirements.
+          </p>
+          <ul class="edu-audience-card__features">
+            <li>Campus-wide deployment</li>
+            <li>LMS integration (Canvas, Moodle)</li>
+            <li>FERPA compliance</li>
+            <li>Admin dashboard</li>
+          </ul>
+          <a href="/" class="btn btn--ghost" style="margin-top: var(--space-lg);">Contact our team →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Benefits ─── -->
+  <section class="section edu-benefits">
+    <div class="container">
+      <h2 class="text-h2 gsap-fade-up" style="margin-bottom: var(--space-xl);">Why educators choose Torii</h2>
+      <div class="grid-4 gsap-stagger">
+        {[
+          { icon: '🔒', title: 'Privacy First', desc: 'Student data is never used for AI training. FERPA and COPPA compliant by design.' },
+          { icon: '💰', title: 'Affordable Access', desc: 'Up to 80% discount for qualifying educational institutions and non-profits.' },
+          { icon: '🌍', title: 'Multilingual', desc: 'Support for 30+ languages. Accessible to students worldwide, regardless of native language.' },
+          { icon: '🎯', title: 'Curriculum Aligned', desc: 'Pre-built templates aligned with K-12 and university curricula across STEM and humanities.' },
+        ].map((item) => (
+          <div class="edu-benefit-card">
+            <div class="edu-benefit-card__icon">{item.icon}</div>
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: var(--space-sm);">{item.title}</h3>
+            <p style="font-size: 14px; color: var(--color-text-secondary); line-height: 1.6;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Endorsement / Testimonials ─── -->
+  <section class="section edu-endorsements" style="background: var(--color-surface-1);">
+    <div class="container">
+      <h2 class="text-h2 gsap-fade-up" style="margin-bottom: var(--space-xl);">What educators say</h2>
+      <div class="grid-3 gsap-stagger">
+        {[
+          {
+            quote: "Torii transformed how I teach data science. Students can now explore complex datasets interactively — the engagement level has tripled.",
+            name: "Dr. Emily Watson",
+            role: "Professor of Data Science, MIT",
+            initial: "EW"
+          },
+          {
+            quote: "We deployed Torii across 12,000 students in one semester. The LMS integration made rollout seamless and our support tickets dropped by 60%.",
+            name: "Michael Torres",
+            role: "Director of EdTech, Stanford",
+            initial: "MT"
+          },
+          {
+            quote: "My students use Torii to build AI-powered research tools. It's given them real-world AI engineering experience before they graduate.",
+            name: "Dr. Aisha Nkrumah",
+            role: "CS Department Head, UCL",
+            initial: "AN"
+          },
+        ].map((t) => (
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">"{t.quote}"</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">{t.initial}</div>
+              <div>
+                <div class="testimonial-card__name">{t.name}</div>
+                <div class="testimonial-card__role">{t.role}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Pricing / Apply CTA ─── -->
+  <section class="section--blue edu-cta gsap-fade-up">
+    <div class="container">
+      <div class="edu-cta__inner">
+        <h2 class="text-h2" style="color: white;">Ready to bring AI<br />to your classroom?</h2>
+        <p style="color: rgba(255,255,255,0.75); font-size: 16px; margin: var(--space-md) 0 var(--space-xl);">
+          Apply for our education program. Qualifying institutions get up to 80% off and dedicated onboarding support.
+        </p>
+        <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap; justify-content: center;">
+          <a href="/" class="btn" style="background: white; color: var(--color-accent);">Apply now →</a>
+          <a href="/" class="btn btn--ghost-white">Contact our education team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .text-accent { color: var(--color-accent); }
+
+  /* Hero */
+  .edu-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+    padding: var(--space-xl) 0;
+  }
+
+  .edu-hero__image {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: var(--border);
+  }
+
+  .edu-hero__image img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+  }
+
+  /* Audience cards */
+  .edu-audience-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .edu-audience-card {
+    border: var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .edu-audience-card--featured {
+    border-color: var(--color-accent);
+    border-width: 2px;
+  }
+
+  .edu-audience-card__icon {
+    font-size: 36px;
+    margin-bottom: var(--space-md);
+  }
+
+  .edu-audience-card__title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+  }
+
+  .edu-audience-card__desc {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+  }
+
+  .edu-audience-card__features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .edu-audience-card__features li {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .edu-audience-card__features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  /* Benefits */
+  .edu-benefit-card {
+    border: var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl) var(--space-lg);
+    transition: background 0.15s;
+  }
+
+  .edu-benefit-card:hover {
+    background: var(--color-surface-1);
+  }
+
+  .edu-benefit-card__icon {
+    font-size: 28px;
+    margin-bottom: var(--space-sm);
+  }
+
+  /* Testimonials */
+  .testimonial-card {
+    background: white;
+    border: var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .testimonial-card__quote {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+  }
+
+  .testimonial-card__author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .testimonial-card__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .testimonial-card__name {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .testimonial-card__role {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+  }
+
+  /* CTA */
+  .edu-cta {
+    padding: var(--space-2xl) 0;
+  }
+
+  .edu-cta__inner {
+    text-align: center;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .edu-hero__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .edu-audience-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

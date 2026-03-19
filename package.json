@@ -1,0 +1,42 @@
+{
+  "name": "@codotx/template-torii",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Torii is a premium SaaS landing page Astro theme with editorial electric-blue design, Inter typography, and GSAP scroll animations.",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src",
+    "public",
+    "astro.config.mjs",
+    "tsconfig.json",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check"
+  },
+  "keywords": [
+    "torii",
+    "saas",
+    "landing-page",
+    "astro-theme",
+    "gsap"
+  ],
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.1",
+    "astro": "^6.0.4",
+    "gsap": "^3.14.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.9.3"
+  }
+}

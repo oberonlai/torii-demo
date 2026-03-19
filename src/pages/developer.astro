@@ -1,0 +1,564 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import abstractDeveloper from '../assets/images/abstract-developer.jpg';
+---
+
+<BaseLayout
+  title="Developer — From setup to deploy, accelerate at once"
+  description="Torii for developers. Powerful APIs, SDKs, and CLI tools to build and ship AI applications faster than ever."
+>
+  <!-- ─── Blue Hero ─── -->
+  <section class="dev-hero section--blue">
+    <div class="container">
+      <div class="dev-hero__inner gsap-fade-up">
+        <div class="dev-hero__content">
+          <div class="section-label" style="color: rgba(255,255,255,0.8);">Developer</div>
+          <h1 class="text-hero dev-hero__heading">
+            From setup to deploy,<br />
+            accelerate at once.
+          </h1>
+          <p class="dev-hero__sub">
+            Deeply explore AI application possibilities. Use advanced tooling to accelerate your development process and ship faster.
+          </p>
+          <div class="dev-hero__actions">
+            <a href="/" class="btn" style="background: white; color: var(--color-accent);">
+              Start building →
+            </a>
+            <a href="/" class="btn btn--ghost-white">
+              Read the docs
+            </a>
+          </div>
+        </div>
+        <div class="dev-hero__image gsap-parallax">
+          <img
+            src={abstractDeveloper.src}
+            alt="Abstract blue geometric imagery representing developer speed"
+            width="600"
+            height="480"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Efficiency / Speed ─── -->
+  <section class="section dev-speed">
+    <div class="container">
+      <div class="dev-speed__header gsap-fade-up">
+        <h2 class="text-h2">Build faster with Torii</h2>
+        <p class="text-large" style="color: var(--color-text-secondary); max-width: 540px;">
+          Everything you need to go from prototype to production AI — in your stack, on your terms.
+        </p>
+      </div>
+      <div class="dev-speed__cards grid-3 gsap-stagger">
+        <div class="dev-speed__card">
+          <div class="dev-speed__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Fast Iteration</h3>
+          <p>Hot-reload your agent and workflow definitions. Debug in real time with full trace visibility.</p>
+        </div>
+        <div class="dev-speed__card">
+          <div class="dev-speed__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="18" rx="3" stroke="#1248ff" stroke-width="1.5"/>
+              <path d="M8 10l-3 3 3 3M16 10l3 3-3 3M12 8l-2 8" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>REST API &amp; SDKs</h3>
+          <p>First-class Python, TypeScript, and Go SDKs. Full OpenAPI spec with Postman collection included.</p>
+        </div>
+        <div class="dev-speed__card">
+          <div class="dev-speed__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Multi-LLM Support</h3>
+          <p>Route to OpenAI, Anthropic, Gemini, Llama, and 200+ models. Switch without code changes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Blue Feature Panel ─── -->
+  <section class="section dev-feature-panel gsap-fade-up">
+    <div class="container">
+      <div class="dev-blue-panel">
+        <div class="dev-blue-panel__content">
+          <h2 class="text-h2" style="color: white;">Build visually,<br />deploy instantly.</h2>
+          <p style="color: rgba(255,255,255,0.75); font-size: 16px; margin: var(--space-md) 0 var(--space-xl);">
+            Design agentic pipelines in Torii's visual canvas. Connect LLMs, tools, and APIs with drag-and-drop. Deploy with one click.
+          </p>
+          <div class="dev-blue-panel__features">
+            <div class="dev-blue-panel__feature">
+              <span class="dev-blue-panel__feature-label">Visual Workflow Builder</span>
+              <p>Design complex agent graphs without writing YAML or JSON configs.</p>
+            </div>
+            <div class="dev-blue-panel__feature">
+              <span class="dev-blue-panel__feature-label">One-click Deploy</span>
+              <p>Push to production instantly. Auto-scaling with zero configuration.</p>
+            </div>
+          </div>
+        </div>
+        <div class="dev-blue-panel__torii-mark" aria-hidden="true">
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <rect x="10" y="75" width="100" height="16" rx="8" fill="rgba(255,255,255,0.2)"/>
+            <rect x="25" y="24" width="70" height="12" rx="6" fill="rgba(255,255,255,0.15)"/>
+            <rect x="22" y="36" width="12" height="55" rx="6" fill="rgba(255,255,255,0.15)"/>
+            <rect x="86" y="36" width="12" height="55" rx="6" fill="rgba(255,255,255,0.15)"/>
+            <rect x="48" y="36" width="24" height="36" rx="6" fill="rgba(255,255,255,0.4)"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Extensibility Cards ─── -->
+  <section class="section dev-extensibility">
+    <div class="container">
+      <h2 class="text-h2 gsap-fade-up" style="margin-bottom: var(--space-xl);">Built for extensibility</h2>
+      <div class="grid-3 gsap-stagger">
+        {[
+          { title: 'Custom Tools', desc: 'Define your own tools with JSON Schema. Call any API, database, or internal service from your agents.' },
+          { title: 'Webhooks', desc: 'Trigger workflows from external events. Receive and send webhook payloads with built-in retry logic.' },
+          { title: 'REST API', desc: 'Full programmatic control. Create, run, and monitor workflows and agents via our OpenAPI-spec API.' },
+          { title: 'TypeScript SDK', desc: 'First-class TS/JS support with full type safety, streaming, and async patterns baked in.' },
+          { title: 'Plugin Marketplace', desc: 'Install and publish plugins from the Torii Marketplace. 400+ community plugins available.' },
+          { title: 'LLM Routing', desc: 'Smart routing across providers based on cost, latency, and capability. Automatic fallbacks included.' },
+        ].map((item) => (
+          <div class="card">
+            <div class="dev-ext-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect x="2" y="2" width="7" height="7" rx="2" fill="#1248ff" opacity="0.2"/>
+                <rect x="11" y="2" width="7" height="7" rx="2" fill="#1248ff" opacity="0.4"/>
+                <rect x="2" y="11" width="7" height="7" rx="2" fill="#1248ff" opacity="0.6"/>
+                <rect x="11" y="11" width="7" height="7" rx="2" fill="#1248ff"/>
+              </svg>
+            </div>
+            <h3 style="font-size: 16px; font-weight: 700; margin: var(--space-sm) 0;">{item.title}</h3>
+            <p style="font-size: 14px; color: var(--color-text-secondary); line-height: 1.6;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Code / Debug Section ─── -->
+  <section class="section dev-debug">
+    <div class="container">
+      <div class="split-section bordered-box gsap-fade-up">
+        <div class="split-section__content">
+          <div class="section-label">Debug</div>
+          <h2 class="text-h2">Full trace visibility.<br /><span class="text-accent">Ship with confidence.</span></h2>
+          <ul class="split-benefits">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5L13 5" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Step-by-step agent execution logs
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5L13 5" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Token usage and cost per run
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5L13 5" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Latency breakdown per node
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5L13 5" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Replay any run for debugging
+            </li>
+          </ul>
+          <a href="/" class="btn btn--primary">Read the docs →</a>
+        </div>
+        <div class="split-section__image">
+          <!-- Debug panel mockup -->
+          <div class="debug-panel">
+            <div class="debug-panel__bar">
+              <span class="debug-panel__dot" style="background: #ff5f57;"></span>
+              <span class="debug-panel__dot" style="background: #febc2e;"></span>
+              <span class="debug-panel__dot" style="background: #28c840;"></span>
+              <span class="debug-panel__title">Trace Viewer</span>
+            </div>
+            <div class="debug-panel__body">
+              <div class="debug-trace">
+                <span class="debug-trace__step">1</span>
+                <div>
+                  <div class="debug-trace__label">LLM Call — GPT-4o</div>
+                  <div class="debug-trace__meta">42ms · 380 tokens · $0.0012</div>
+                </div>
+                <span class="debug-trace__status debug-trace__status--ok">✓</span>
+              </div>
+              <div class="debug-trace">
+                <span class="debug-trace__step">2</span>
+                <div>
+                  <div class="debug-trace__label">Tool: search_knowledge</div>
+                  <div class="debug-trace__meta">128ms · 3 results</div>
+                </div>
+                <span class="debug-trace__status debug-trace__status--ok">✓</span>
+              </div>
+              <div class="debug-trace">
+                <span class="debug-trace__step">3</span>
+                <div>
+                  <div class="debug-trace__label">LLM Call — Claude 3.5</div>
+                  <div class="debug-trace__meta">88ms · 620 tokens · $0.003</div>
+                </div>
+                <span class="debug-trace__status debug-trace__status--ok">✓</span>
+              </div>
+              <div class="debug-trace">
+                <span class="debug-trace__step">4</span>
+                <div>
+                  <div class="debug-trace__label">Output: Response generated</div>
+                  <div class="debug-trace__meta">Total: 258ms · $0.0042</div>
+                </div>
+                <span class="debug-trace__status debug-trace__status--done">→</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─── -->
+  <section class="section faq-section">
+    <div class="container">
+      <h2 class="text-h2 gsap-fade-up" style="margin-bottom: var(--space-xl);">Frequently asked questions</h2>
+      <div class="faq-list gsap-fade-up">
+        {[
+          { q: 'What languages does the SDK support?', a: 'Torii has first-class SDKs for Python, TypeScript/JavaScript, and Go. REST API access is available for any language with HTTP support.' },
+          { q: 'Can I use my own LLM models?', a: 'Yes. Torii supports custom model endpoints. You can connect any OpenAI-compatible API, Ollama, or private inference server.' },
+          { q: 'Is there a local development environment?', a: 'Yes. The Torii CLI runs the full platform locally with Docker. Hot-reload support for workflow definitions is included.' },
+          { q: 'Does Torii support streaming responses?', a: 'Yes, all LLM calls support Server-Sent Events (SSE) streaming out of the box, including in multi-step workflows.' },
+          { q: 'How do I migrate from LangChain or LlamaIndex?', a: 'Torii provides migration guides and adapters for LangChain and LlamaIndex. Most workflows can be migrated with minimal code changes.' },
+        ].map((item) => (
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              {item.q}
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" aria-hidden="true">
+              <div class="faq-answer-inner">{item.a}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Blue CTA ─── -->
+  <section class="section--blue dev-cta gsap-fade-up">
+    <div class="container">
+      <div class="dev-cta__inner">
+        <h2 class="text-h2" style="color: white;">Start building today.</h2>
+        <a href="/" class="btn" style="background: white; color: var(--color-accent);">
+          Get started free →
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .text-accent { color: var(--color-accent); }
+
+  /* Blue hero */
+  .dev-hero {
+    padding: var(--space-2xl) 0;
+    min-height: 560px;
+  }
+
+  .dev-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  .dev-hero__heading {
+    color: white;
+    margin: var(--space-md) 0;
+  }
+
+  .dev-hero__sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: var(--space-xl);
+  }
+
+  .dev-hero__actions {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .dev-hero__image {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .dev-hero__image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  /* Speed cards */
+  .dev-speed__header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .dev-speed__card {
+    border: var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl) var(--space-lg);
+    transition: background 0.15s;
+  }
+
+  .dev-speed__card:hover {
+    background: var(--color-surface-1);
+  }
+
+  .dev-speed__icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface-1);
+    margin-bottom: var(--space-md);
+  }
+
+  .dev-speed__card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+  }
+
+  .dev-speed__card p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Blue feature panel */
+  .dev-blue-panel {
+    background: var(--color-accent);
+    border-radius: var(--radius-md);
+    padding: var(--space-2xl);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-xl);
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .dev-blue-panel__features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .dev-blue-panel__feature-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 6px;
+  }
+
+  .dev-blue-panel__feature p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.5;
+  }
+
+  .dev-blue-panel__torii-mark {
+    opacity: 0.4;
+    flex-shrink: 0;
+  }
+
+  /* Extensibility */
+  .dev-ext-icon {
+    margin-bottom: var(--space-sm);
+  }
+
+  /* Debug section */
+  .split-benefits {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin: var(--space-xl) 0;
+  }
+
+  .split-benefits li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 15px;
+    color: var(--color-text-secondary);
+  }
+
+  .debug-panel {
+    height: 100%;
+    min-height: 400px;
+    background: #0d1117;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .debug-panel__bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px;
+    border-bottom: 1px solid #30363d;
+  }
+
+  .debug-panel__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .debug-panel__title {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+    color: #8b949e;
+    font-family: monospace;
+  }
+
+  .debug-panel__body {
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    flex: 1;
+  }
+
+  .debug-trace {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 10px 12px;
+    background: #161b22;
+    border-radius: 6px;
+    border: 1px solid #30363d;
+  }
+
+  .debug-trace__step {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #1248ff;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: monospace;
+  }
+
+  .debug-trace__label {
+    font-size: 13px;
+    color: #e6edf3;
+    font-family: monospace;
+  }
+
+  .debug-trace__meta {
+    font-size: 11px;
+    color: #8b949e;
+    font-family: monospace;
+  }
+
+  .debug-trace__status {
+    margin-left: auto;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .debug-trace__status--ok { color: #3fb950; }
+  .debug-trace__status--done { color: #1248ff; }
+
+  /* Dev CTA */
+  .dev-cta {
+    padding: var(--space-2xl) 0;
+  }
+
+  .dev-cta__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+  }
+
+  /* FAQ */
+  .faq-section { border-top: var(--border); }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .dev-hero__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .dev-blue-panel {
+      grid-template-columns: 1fr;
+    }
+
+    .dev-blue-panel__torii-mark {
+      display: none;
+    }
+
+    .dev-blue-panel__features {
+      grid-template-columns: 1fr;
+    }
+
+    .dev-cta__inner {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  /* FAQ accordion. */
+  document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
+    const question = item.querySelector<HTMLButtonElement>('.faq-question');
+    const answer = item.querySelector<HTMLElement>('.faq-answer');
+    question?.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item').forEach((i) => {
+        i.classList.remove('is-open');
+        i.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
+        const a = i.querySelector<HTMLElement>('.faq-answer');
+        if (a) a.setAttribute('aria-hidden', 'true');
+      });
+      if (!isOpen) {
+        item.classList.add('is-open');
+        question.setAttribute('aria-expanded', 'true');
+        if (answer) answer.setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+</script>

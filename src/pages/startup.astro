@@ -1,0 +1,503 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import workflowStartup from '../assets/images/workflow-startup.jpg';
+import mountainBuild from '../assets/images/mountain-build.jpg';
+---
+
+<BaseLayout
+  title="Startup — From idea to impact, fast"
+  description="Torii for startups. Build and ship AI-powered products faster with the platform trusted by thousands of growing teams."
+>
+  <!-- ─── Hero ─── -->
+  <section class="startup-hero section">
+    <div class="container">
+      <div class="startup-hero__inner bordered-box gsap-fade-up">
+        <div class="startup-hero__content">
+          <div class="section-label">Startup</div>
+          <h1 class="text-hero">
+            From idea<br />
+            <span class="text-accent">to impact, fast.</span>
+          </h1>
+          <p class="text-large startup-hero__sub">
+            Everything a startup needs to build AI products. Ship your first AI feature this week — not next quarter.
+          </p>
+          <div class="startup-hero__actions">
+            <a href="/pricing" class="btn btn--primary">Get started free →</a>
+            <a href="/" class="btn btn--ghost">Talk to our team</a>
+          </div>
+        </div>
+        <div class="startup-hero__badges gsap-stagger">
+          <div class="startup-badge">
+            <span class="startup-badge__num">200k+</span>
+            <span class="startup-badge__label">Active apps</span>
+          </div>
+          <div class="startup-badge">
+            <span class="startup-badge__num">50k+</span>
+            <span class="startup-badge__label">Teams</span>
+          </div>
+          <div class="startup-badge">
+            <span class="startup-badge__num">99.9%</span>
+            <span class="startup-badge__label">Uptime SLA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Easy Build (50/50) ─── -->
+  <section class="section startup-build">
+    <div class="container">
+      <div class="split-section bordered-box gsap-fade-up">
+        <div class="split-section__content">
+          <div class="section-label">Build</div>
+          <h2 class="text-h2">Build AI products<br /><span class="text-accent">without the complexity.</span></h2>
+          <p style="color: var(--color-text-secondary); margin: var(--space-md) 0 var(--space-xl); font-size: 15px; line-height: 1.7;">
+            Drag-and-drop workflow builder. No infrastructure setup. No ML expertise required. Launch your AI feature in days, not months.
+          </p>
+          <ul class="split-benefits">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5L13 5" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Visual drag-and-drop workflow builder
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5L13 5" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Pre-built templates to start in minutes
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5L13 5" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Works with any LLM provider
+            </li>
+          </ul>
+          <a href="/developer" class="btn btn--primary">View developer docs →</a>
+        </div>
+        <div class="split-section__image gsap-parallax">
+          <img
+            src={workflowStartup.src}
+            alt="Workflow dashboard for startup teams"
+            width="900"
+            height="600"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Ecosystem / Integrations ─── -->
+  <section class="section startup-ecosystem">
+    <div class="container">
+      <div class="startup-ecosystem__header gsap-fade-up">
+        <h2 class="text-h2">Connect your entire stack.</h2>
+        <p style="color: var(--color-text-secondary); font-size: 16px; margin-top: var(--space-sm);">
+          200+ integrations. Works with the tools your team already uses.
+        </p>
+      </div>
+      <div class="ecosystem-grid gsap-stagger">
+        {[
+          { name: 'Slack', color: '#4a154b', icon: '💬' },
+          { name: 'Notion', color: '#000', icon: '📝' },
+          { name: 'GitHub', color: '#24292f', icon: '🐙' },
+          { name: 'Stripe', color: '#635bff', icon: '💳' },
+          { name: 'Zapier', color: '#ff4a00', icon: '⚡' },
+          { name: 'HubSpot', color: '#ff7a59', icon: '🧲' },
+          { name: 'Postgres', color: '#336791', icon: '🐘' },
+          { name: 'Pinecone', color: '#0f172a', icon: '🌲' },
+          { name: 'Jira', color: '#0052cc', icon: '🎯' },
+          { name: 'Gmail', color: '#ea4335', icon: '📧' },
+          { name: 'Confluence', color: '#0052cc', icon: '📚' },
+          { name: 'Linear', color: '#5e6ad2', icon: '📐' },
+          { name: 'OpenAI', color: '#10a37f', icon: '🤖' },
+          { name: 'Anthropic', color: '#c96442', icon: '🧠' },
+          { name: 'Supabase', color: '#3ecf8e', icon: '⚡' },
+          { name: 'Airtable', color: '#fcb400', icon: '📊' },
+        ].map((tool) => (
+          <div class="ecosystem-item">
+            <span class="ecosystem-item__icon">{tool.icon}</span>
+            <span class="ecosystem-item__name">{tool.name}</span>
+          </div>
+        ))}
+      </div>
+      <p class="ecosystem-more">
+        + 180 more integrations available in the <a href="/" class="text-accent">Marketplace →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── One-click Deploy ─── -->
+  <section class="section startup-deploy">
+    <div class="container">
+      <div class="split-section split-section--reverse bordered-box gsap-fade-up">
+        <div class="split-section__image gsap-parallax">
+          <img
+            src={mountainBuild.src}
+            alt="Deploy with confidence — scale automatically"
+            width="900"
+            height="600"
+            loading="lazy"
+          />
+        </div>
+        <div class="split-section__content">
+          <div class="section-label">Deploy</div>
+          <h2 class="text-h2">One click.<br /><span class="text-accent">Production ready.</span></h2>
+          <ul class="split-benefits">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5L13 5" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Auto-scaling with zero configuration
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5L13 5" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              99.9% uptime SLA included
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5L13 5" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Custom domain with SSL in minutes
+            </li>
+          </ul>
+          <a href="/pricing" class="btn btn--primary">See pricing →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Testimonials / Stats ─── -->
+  <section class="section startup-social">
+    <div class="container">
+      <div class="startup-stats-band gsap-fade-up">
+        <div class="startup-stat">
+          <span class="startup-stat__num gsap-count" data-target="200000" data-suffix="+">200,000+</span>
+          <span class="startup-stat__label">Apps built on Torii</span>
+        </div>
+        <div class="startup-stat">
+          <span class="startup-stat__num gsap-count" data-target="50" data-suffix="k+">50k+</span>
+          <span class="startup-stat__label">Active teams</span>
+        </div>
+        <div class="startup-stat">
+          <span class="startup-stat__num gsap-count" data-target="5" data-suffix="B+">5B+</span>
+          <span class="startup-stat__label">API calls / month</span>
+        </div>
+      </div>
+
+      <!-- Testimonial cards -->
+      <div class="testimonial-cards gsap-stagger">
+        {[
+          {
+            quote: "We shipped our AI customer support agent in 3 days using Torii. What would have taken months with custom infrastructure was done before our next sprint.",
+            name: "Sarah Chen",
+            role: "CTO, Growthly",
+            initial: "SC"
+          },
+          {
+            quote: "Torii's multi-agent workflow was exactly what we needed for our data analysis pipeline. The visual builder made it trivial to iterate on our prompts.",
+            name: "Marcus Rivera",
+            role: "Founder, DataPulse",
+            initial: "MR"
+          },
+          {
+            quote: "We cut our AI development time by 70%. Torii handles all the infrastructure complexity so we can focus on building features our users love.",
+            name: "Yuki Tanaka",
+            role: "Lead Engineer, Nexari",
+            initial: "YT"
+          },
+        ].map((t) => (
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">"{t.quote}"</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">{t.initial}</div>
+              <div>
+                <div class="testimonial-card__name">{t.name}</div>
+                <div class="testimonial-card__role">{t.role}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Blue CTA ─── -->
+  <section class="section--blue startup-cta gsap-fade-up">
+    <div class="container">
+      <div class="startup-cta__inner">
+        <h2 class="text-h2" style="color: white;">Ready to build?</h2>
+        <p style="color: rgba(255,255,255,0.75);">Start free. No credit card required.</p>
+        <a href="/pricing" class="btn" style="background: white; color: var(--color-accent); margin-top: var(--space-lg);">
+          Get started free →
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .text-accent { color: var(--color-accent); }
+
+  /* Hero */
+  .startup-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-2xl);
+    padding: var(--space-2xl) var(--space-xl);
+    align-items: center;
+  }
+
+  .startup-hero__sub {
+    color: var(--color-text-secondary);
+    margin: var(--space-md) 0 var(--space-xl);
+  }
+
+  .startup-hero__actions {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .startup-hero__badges {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    flex-shrink: 0;
+  }
+
+  .startup-badge {
+    border: var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-md) var(--space-xl);
+    text-align: center;
+    min-width: 140px;
+  }
+
+  .startup-badge__num {
+    display: block;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-accent);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .startup-badge__label {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* Build/Deploy */
+  .startup-build,
+  .startup-deploy {
+    padding-top: 0;
+  }
+
+  .split-section--reverse {
+    direction: rtl;
+  }
+
+  .split-section--reverse > * {
+    direction: ltr;
+  }
+
+  .split-benefits {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin: var(--space-xl) 0;
+  }
+
+  .split-benefits li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 15px;
+    color: var(--color-text-secondary);
+  }
+
+  /* Ecosystem */
+  .startup-ecosystem__header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .ecosystem-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .ecosystem-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: var(--space-md) var(--space-sm);
+    border: var(--border);
+    border-radius: var(--radius-md);
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  .ecosystem-item:hover {
+    background: var(--color-surface-1);
+    border-color: var(--color-accent);
+  }
+
+  .ecosystem-item__icon {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .ecosystem-item__name {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-align: center;
+  }
+
+  .ecosystem-more {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-top: var(--space-md);
+  }
+
+  /* Stats */
+  .startup-stats-band {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    padding: var(--space-xl);
+    border: var(--border);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-xl);
+    text-align: center;
+  }
+
+  .startup-stat__num {
+    display: block;
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--color-accent);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: var(--space-sm);
+  }
+
+  .startup-stat__label {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+  }
+
+  /* Testimonials */
+  .testimonial-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .testimonial-card {
+    border: var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .testimonial-card__quote {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+  }
+
+  .testimonial-card__author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .testimonial-card__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .testimonial-card__name {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .testimonial-card__role {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+  }
+
+  /* CTA */
+  .startup-cta {
+    padding: var(--space-2xl) 0;
+  }
+
+  .startup-cta__inner {
+    text-align: center;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .ecosystem-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .startup-hero__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .startup-hero__badges {
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .startup-badge {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .ecosystem-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .startup-stats-band {
+      grid-template-columns: 1fr;
+    }
+
+    .testimonial-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .ecosystem-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

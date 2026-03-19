@@ -1,0 +1,197 @@
+---
+import '../styles/base.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import { siteName, siteDescription } from '../data/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = siteDescription,
+  ogImage = '',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const pageTitle = title.includes(siteName) ? title : `${title} — ${siteName}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <Navigation />
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+
+    <script>
+      import { initToriiMotion, loadGsap } from '../utils/animations';
+
+      let cleanup: (() => void) | undefined;
+      let isTransitioning = false;
+
+      async function bootMotion() {
+        cleanup?.();
+        cleanup = await initToriiMotion(document);
+      }
+
+      /* SPA-style navigation: only swap <main>, keep header/footer. */
+      async function navigateTo(url: string) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        // loadGsap is imported statically above.
+        const { gsap } = await loadGsap();
+        const main = document.querySelector('main');
+        if (!main) {
+          window.location.href = url;
+          return;
+        }
+
+        /* Fade out current content. */
+        await gsap.to(main, {
+          opacity: 0,
+          y: -12,
+          duration: 0.25,
+          ease: 'power2.in',
+        });
+
+        try {
+          const res = await fetch(url);
+          const html = await res.text();
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const newMain = doc.querySelector('main');
+          const newTitle = doc.querySelector('title')?.textContent;
+
+          if (!newMain) {
+            window.location.href = url;
+            return;
+          }
+
+          /* Swap <main> — preserve data-astro-cid-* attributes. */
+          main.replaceWith(newMain.cloneNode(true));
+
+          /* Sync <style> tags from new page. */
+          document.querySelectorAll('style[data-spa-page]').forEach((s) => s.remove());
+          doc.head.querySelectorAll('style').forEach((style) => {
+            const clone = style.cloneNode(true) as HTMLStyleElement;
+            clone.setAttribute('data-spa-page', 'true');
+            document.head.appendChild(clone);
+          });
+
+          /* Sync unique <link rel="stylesheet"> tags. */
+          const existingHrefs = new Set(
+            Array.from(document.head.querySelectorAll('link[rel="stylesheet"]'))
+              .map((l) => l.getAttribute('href'))
+          );
+          doc.head.querySelectorAll('link[rel="stylesheet"]').forEach((link) => {
+            const href = link.getAttribute('href');
+            if (href && !existingHrefs.has(href)) {
+              const clone = link.cloneNode(true) as HTMLLinkElement;
+              clone.setAttribute('data-spa-page', 'true');
+              document.head.appendChild(clone);
+            }
+          });
+
+          const freshMain = document.querySelector('main');
+          if (!freshMain) {
+            window.location.href = url;
+            return;
+          }
+
+          if (newTitle) document.title = newTitle;
+          window.history.pushState({}, '', url);
+          window.scrollTo({ top: 0, behavior: 'instant' });
+
+          /* Update active nav link. */
+          const path = new URL(url, window.location.origin).pathname;
+          document.querySelectorAll('[data-nav-link]').forEach((link) => {
+            const href = (link as HTMLAnchorElement).getAttribute('href') || '';
+            const isActive = path === href || (href !== '/' && path.startsWith(href));
+            link.classList.toggle('is-active', isActive);
+          });
+
+          /* Re-init GSAP for new content. */
+          cleanup?.();
+          cleanup = await initToriiMotion(document);
+
+          /* Fade in new content. */
+          gsap.fromTo(freshMain,
+            { opacity: 0, y: 16 },
+            { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' }
+          );
+        } catch {
+          window.location.href = url;
+        } finally {
+          isTransitioning = false;
+        }
+      }
+
+      /* Intercept internal link clicks. */
+      function initSpaNav() {
+        document.addEventListener('click', (e) => {
+          const anchor = (e.target as Element).closest('a[href]') as HTMLAnchorElement | null;
+          if (!anchor) return;
+          if (
+            anchor.hostname !== window.location.hostname ||
+            anchor.target === '_blank' ||
+            anchor.hasAttribute('download')
+          ) return;
+
+          const href = anchor.getAttribute('href');
+          if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+
+          e.preventDefault();
+          navigateTo(anchor.href);
+        });
+
+        /* Handle browser back/forward. */
+        window.addEventListener('popstate', () => {
+          navigateTo(window.location.href);
+        });
+      }
+
+      /* Initial page fade in. */
+      async function initialFadeIn() {
+        const { gsap } = await loadGsap();
+        const main = document.querySelector('main');
+        if (main) {
+          gsap.fromTo(main,
+            { opacity: 0, y: 12 },
+            { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' }
+          );
+        }
+      }
+
+      bootMotion();
+      initSpaNav();
+      initialFadeIn();
+    </script>
+  </body>
+</html>

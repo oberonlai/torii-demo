@@ -1,0 +1,416 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import architectureEnterprise from '../assets/images/architecture-enterprise.jpg';
+import mountainBuild from '../assets/images/mountain-build.jpg';
+import rockyConnect from '../assets/images/rocky-connect.jpg';
+---
+
+<BaseLayout
+  title="Enterprise — AI infrastructure built for scale"
+  description="Torii Enterprise delivers the security, compliance, and scale that large organizations require. SOC 2 Type II, SAML SSO, dedicated support, and private deployment options."
+>
+  <!-- ─── Hero ─── -->
+  <section class="section enterprise-hero">
+    <div class="container">
+      <div class="split-section bordered-box gsap-fade-up">
+        <div class="split-section__content">
+          <div class="section-label">Enterprise</div>
+          <h1 class="text-hero">
+            AI infrastructure<br />
+            <span class="text-accent">built for scale.</span>
+          </h1>
+          <p style="color: var(--color-text-secondary); font-size: 16px; line-height: 1.7; margin: var(--space-md) 0 var(--space-xl);">
+            Deploy Torii in your environment with enterprise-grade security, compliance, and dedicated support — all backed by a 99.99% SLA.
+          </p>
+          <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap;">
+            <a href="/" class="btn btn--primary">Request a demo →</a>
+            <a href="/" class="btn btn--ghost">View security docs</a>
+          </div>
+        </div>
+        <div class="split-section__image gsap-parallax">
+          <img
+            src={architectureEnterprise.src}
+            alt="Modern architectural facade — enterprise infrastructure"
+            width="900"
+            height="600"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Why Torii Enterprise ─── -->
+  <section class="section enterprise-why">
+    <div class="container">
+      <h2 class="text-h2 gsap-fade-up" style="margin-bottom: var(--space-xl);">Why enterprise teams choose Torii</h2>
+      <div class="grid-3 gsap-stagger">
+        {[
+          { icon: '🔒', title: 'Enterprise Security', desc: 'SOC 2 Type II certified. Data encrypted at rest and in transit. Your data is never used for model training.' },
+          { icon: '🏗️', title: 'Private Deployment', desc: 'Deploy on your own cloud or on-premise. Full support for AWS, GCP, Azure, and air-gapped environments.' },
+          { icon: '⚡', title: '99.99% SLA', desc: 'Enterprise-grade uptime backed by a contractual SLA. Redundant infrastructure across multiple regions.' },
+          { icon: '🛡️', title: 'Compliance Ready', desc: 'GDPR, HIPAA, and SOC 2 compliant. Audit logs for every action. Role-based access control built in.' },
+          { icon: '👥', title: 'Dedicated Support', desc: 'Named customer success manager. Priority support with 4-hour response SLA. Quarterly business reviews.' },
+          { icon: '🔧', title: 'Custom Integrations', desc: 'Professional services team to build custom connectors and integrations for your internal systems.' },
+        ].map((item) => (
+          <div class="card enterprise-why__card">
+            <div class="enterprise-why__icon">{item.icon}</div>
+            <h3 style="font-size: 17px; font-weight: 700; margin-bottom: var(--space-sm);">{item.title}</h3>
+            <p style="font-size: 14px; color: var(--color-text-secondary); line-height: 1.6;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Capability Deep Dives ─── -->
+  <section class="section enterprise-capabilities">
+    <div class="container">
+      <h2 class="text-h2 gsap-fade-up" style="margin-bottom: var(--space-2xl);">Deep capabilities for every team</h2>
+
+      <!-- Knowledge Management -->
+      <div class="enterprise-cap-row split-section bordered-box gsap-fade-up">
+        <div class="split-section__content">
+          <div class="section-label">Knowledge</div>
+          <h3 class="text-h3">Enterprise Knowledge Management</h3>
+          <p style="color: var(--color-text-secondary); margin: var(--space-md) 0; line-height: 1.7;">
+            Connect all your enterprise data sources — Confluence, SharePoint, Notion, and internal databases — for accurate, citation-backed AI responses.
+          </p>
+          <ul class="enterprise-cap-list">
+            <li>Support for 50+ document formats</li>
+            <li>Automatic chunking and embedding</li>
+            <li>Hybrid search (semantic + keyword)</li>
+            <li>Permission-aware retrieval</li>
+          </ul>
+        </div>
+        <div class="split-section__image gsap-parallax">
+          <img src={rockyConnect.src} alt="Knowledge management infrastructure" width="900" height="500" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Multi-agent -->
+      <div class="enterprise-cap-row split-section split-section--reverse bordered-box gsap-fade-up">
+        <div class="split-section__image gsap-parallax">
+          <img src={mountainBuild.src} alt="Multi-agent orchestration at scale" width="900" height="500" loading="lazy" />
+        </div>
+        <div class="split-section__content">
+          <div class="section-label">Multi-Agent</div>
+          <h3 class="text-h3">Orchestrate Complex Agent Pipelines</h3>
+          <p style="color: var(--color-text-secondary); margin: var(--space-md) 0; line-height: 1.7;">
+            Design and deploy multi-agent systems where specialized AI agents collaborate on complex tasks. Built-in orchestration, state management, and error recovery.
+          </p>
+          <ul class="enterprise-cap-list">
+            <li>Visual multi-agent graph builder</li>
+            <li>Shared memory and context</li>
+            <li>Automatic error recovery</li>
+            <li>Human-in-the-loop support</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Security -->
+      <div class="enterprise-cap-row split-section bordered-box gsap-fade-up">
+        <div class="split-section__content">
+          <div class="section-label">Security</div>
+          <h3 class="text-h3">Enterprise-Grade Security Controls</h3>
+          <p style="color: var(--color-text-secondary); margin: var(--space-md) 0; line-height: 1.7;">
+            Fine-grained access control, audit logging, data residency controls, and prompt injection protection — all enterprise security requirements met out of the box.
+          </p>
+          <ul class="enterprise-cap-list">
+            <li>SAML 2.0 / OIDC SSO</li>
+            <li>Role-based access control (RBAC)</li>
+            <li>Full audit trail</li>
+            <li>Data residency in 6 regions</li>
+          </ul>
+        </div>
+        <div class="split-section__image gsap-parallax">
+          <img src={architectureEnterprise.src} alt="Enterprise security controls" width="900" height="500" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Infrastructure Options ─── -->
+  <section class="section enterprise-infra">
+    <div class="container">
+      <h2 class="text-h2 gsap-fade-up" style="margin-bottom: var(--space-xl);">Flexible deployment options</h2>
+      <div class="grid-3 gsap-stagger">
+        <div class="infra-card">
+          <div class="infra-card__icon">☁️</div>
+          <h3 class="infra-card__title">Cloud SaaS</h3>
+          <p class="infra-card__desc">Fully managed by Torii. Instant setup, automatic updates, and 99.99% uptime. Ideal for teams who want to move fast.</p>
+          <ul class="infra-card__features">
+            <li>No infrastructure to manage</li>
+            <li>Automatic updates</li>
+            <li>Data in your chosen region</li>
+          </ul>
+        </div>
+        <div class="infra-card infra-card--featured">
+          <div class="infra-card__badge">Most popular</div>
+          <div class="infra-card__icon">🏢</div>
+          <h3 class="infra-card__title">Private Cloud</h3>
+          <p class="infra-card__desc">Torii deployed in your cloud account (AWS, GCP, Azure). Full isolation with the ease of managed infrastructure.</p>
+          <ul class="infra-card__features">
+            <li>Dedicated tenant</li>
+            <li>Customer-managed keys</li>
+            <li>VPC peering support</li>
+          </ul>
+        </div>
+        <div class="infra-card">
+          <div class="infra-card__icon">🏭</div>
+          <h3 class="infra-card__title">On-Premise</h3>
+          <p class="infra-card__desc">Full deployment inside your data center with no external connectivity required. Air-gapped environments supported.</p>
+          <ul class="infra-card__features">
+            <li>Complete data control</li>
+            <li>Air-gapped support</li>
+            <li>On-site setup available</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Support & Compliance ─── -->
+  <section class="section enterprise-support">
+    <div class="container">
+      <div class="enterprise-support__grid gsap-stagger">
+        <div class="enterprise-support__col">
+          <h2 class="text-h2">Dedicated support,<br />at every step.</h2>
+          <p style="color: var(--color-text-secondary); margin: var(--space-md) 0 var(--space-xl); line-height: 1.7;">
+            Enterprise customers get a named Customer Success Manager, 4-hour SLA support, and quarterly business reviews.
+          </p>
+          <div class="enterprise-support__tiers">
+            <div class="support-tier">
+              <span class="support-tier__label">Response time</span>
+              <span class="support-tier__value">&lt; 4 hours</span>
+            </div>
+            <div class="support-tier">
+              <span class="support-tier__label">Dedicated CSM</span>
+              <span class="support-tier__value">Included</span>
+            </div>
+            <div class="support-tier">
+              <span class="support-tier__label">Onboarding sessions</span>
+              <span class="support-tier__value">Unlimited</span>
+            </div>
+          </div>
+        </div>
+        <div class="enterprise-support__col">
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: var(--space-lg);">Compliance certifications</h3>
+          <div class="compliance-badges">
+            {['SOC 2 Type II', 'GDPR', 'HIPAA Ready', 'ISO 27001', 'CCPA', 'FedRAMP (Planned)'].map((cert) => (
+              <div class="compliance-badge">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M8 1.5L2 4v5c0 3.5 2.6 6.8 6 7.5 3.4-.7 6-4 6-7.5V4L8 1.5z" stroke="#1248ff" stroke-width="1.2" fill="none"/>
+                  <path d="M5 8l2 2 4-4" stroke="#1248ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                {cert}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Enterprise CTA ─── -->
+  <section class="enterprise-final-cta gsap-fade-up">
+    <div class="container">
+      <div class="enterprise-final-cta__inner">
+        <h2 class="text-h2" style="color: white;">Ready to scale AI<br />across your organization?</h2>
+        <p style="color: rgba(255,255,255,0.75); margin: var(--space-md) 0 var(--space-xl);">
+          Talk to our enterprise team. We'll design the right solution for your needs.
+        </p>
+        <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap; justify-content: center;">
+          <a href="/" class="btn" style="background: white; color: #0b2a9a;">Request a demo →</a>
+          <a href="/" class="btn btn--ghost-white">Download security docs</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .text-accent { color: var(--color-accent); }
+
+  /* Hero */
+  .enterprise-hero {
+    padding-top: var(--space-lg);
+  }
+
+  /* Why cards */
+  .enterprise-why__icon {
+    font-size: 28px;
+    margin-bottom: var(--space-sm);
+  }
+
+  /* Capabilities */
+  .enterprise-cap-row {
+    margin-bottom: var(--space-lg);
+  }
+
+  .split-section--reverse {
+    direction: rtl;
+  }
+
+  .split-section--reverse > * {
+    direction: ltr;
+  }
+
+  .enterprise-cap-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: var(--space-md);
+  }
+
+  .enterprise-cap-list li {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .enterprise-cap-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  /* Infrastructure cards */
+  .infra-card {
+    border: var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl) var(--space-lg);
+    position: relative;
+  }
+
+  .infra-card--featured {
+    border-color: var(--color-accent);
+    border-width: 2px;
+  }
+
+  .infra-card__badge {
+    position: absolute;
+    top: -1px;
+    left: var(--space-lg);
+    transform: translateY(-100%);
+    background: var(--color-accent);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .infra-card__icon {
+    font-size: 32px;
+    margin-bottom: var(--space-md);
+  }
+
+  .infra-card__title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+  }
+
+  .infra-card__desc {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+  }
+
+  .infra-card__features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .infra-card__features li {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .infra-card__features li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+  }
+
+  /* Support section */
+  .enterprise-support {
+    border-top: var(--border);
+  }
+
+  .enterprise-support__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .enterprise-support__tiers {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .support-tier {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) 0;
+    border-bottom: var(--border);
+    font-size: 15px;
+  }
+
+  .support-tier__label {
+    color: var(--color-text-secondary);
+  }
+
+  .support-tier__value {
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  .compliance-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .compliance-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  /* Final CTA */
+  .enterprise-final-cta {
+    background: #0b2a9a;
+    padding: var(--space-3xl) 0;
+  }
+
+  .enterprise-final-cta__inner {
+    text-align: center;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .enterprise-support__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,227 @@
+---
+import { siteName, navLinks, githubStars } from '../data/site';
+
+const pathname = Astro.url.pathname;
+
+function isActive(href: string) {
+  if (href === '/') return pathname === '/';
+  return pathname.startsWith(href);
+}
+---
+
+<header class="nav-header">
+  <div class="nav-inner container">
+    <!-- Wordmark -->
+    <a href="/" class="nav-logo" data-nav-link>
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <rect x="2" y="18" width="24" height="4" rx="2" fill="#1248ff"/>
+        <rect x="6" y="6" width="16" height="3" rx="1.5" fill="#111111"/>
+        <rect x="5" y="9" width="3" height="13" rx="1.5" fill="#111111"/>
+        <rect x="20" y="9" width="3" height="13" rx="1.5" fill="#111111"/>
+        <rect x="11.5" y="9" width="5" height="9" rx="1.5" fill="#1248ff"/>
+      </svg>
+      <span class="nav-logo__text">{siteName}</span>
+    </a>
+
+    <!-- Center nav links -->
+    <nav class="nav-links" aria-label="Main navigation">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          data-nav-link
+          class:list={['nav-link', { 'is-active': isActive(link.href) }]}
+        >
+          {link.label}
+          {link.hasDropdown && (
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          )}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Right actions -->
+    <div class="nav-actions">
+      <a href="/" class="nav-github" aria-label="GitHub">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+        </svg>
+        <span>{githubStars} stars</span>
+      </a>
+      <a href="/pricing" class="btn btn--primary nav-cta">
+        Start building
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button class="nav-burger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="nav-mobile">
+    {navLinks.map((link) => (
+      <a href={link.href} data-nav-link class="nav-mobile__link">{link.label}</a>
+    ))}
+    <a href="/pricing" class="btn btn--primary">Start building →</a>
+  </div>
+</header>
+
+<style>
+  .nav-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    gap: var(--space-xl);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .nav-logo__text {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    border-radius: var(--radius-sm);
+    transition: color 0.15s ease;
+  }
+
+  .nav-link:hover,
+  .nav-link.is-active {
+    color: var(--color-text-primary);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex-shrink: 0;
+  }
+
+  .nav-github {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    transition: color 0.15s ease;
+  }
+
+  .nav-github:hover {
+    color: var(--color-text-primary);
+  }
+
+  .nav-cta {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .nav-burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    margin-left: auto;
+  }
+
+  .nav-burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-text-primary);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    padding: var(--space-md);
+    border-top: var(--border);
+    gap: var(--space-sm);
+  }
+
+  .nav-mobile.is-open {
+    display: flex;
+  }
+
+  .nav-mobile__link {
+    padding: 10px var(--space-md);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    border-radius: var(--radius-sm);
+    transition: background 0.15s;
+  }
+
+  .nav-mobile__link:hover {
+    background: var(--color-surface-1);
+  }
+
+  @media (max-width: 900px) {
+    .nav-links {
+      display: none;
+    }
+
+    .nav-github {
+      display: none;
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    .nav-burger {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  const burger = document.querySelector('.nav-burger') as HTMLButtonElement | null;
+  const mobileMenu = document.querySelector('.nav-mobile') as HTMLElement | null;
+
+  burger?.addEventListener('click', () => {
+    const isOpen = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!isOpen));
+    if (mobileMenu) {
+      mobileMenu.classList.toggle('is-open', !isOpen);
+    }
+  });
+</script>

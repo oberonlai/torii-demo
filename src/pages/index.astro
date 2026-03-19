@@ -1,0 +1,632 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import mountainBuild from '../assets/images/mountain-build.jpg';
+import rockyConnect from '../assets/images/rocky-connect.jpg';
+---
+
+<BaseLayout
+  title="Build Production-Ready Agentic AI Solutions"
+  description="Torii is the platform for building, deploying, and scaling AI-powered applications and agents. From idea to production in minutes."
+>
+  <!-- ─── Hero Section ─── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-box bordered-box">
+        <!-- Announcement bar -->
+        <div class="announcement-bar">
+          <span class="announcement-bar__pill">v2.0 Release</span>
+          <span>Multi-agent workflows now in general availability</span>
+          <a href="/" class="announcement-bar__link">Learn more ↗</a>
+        </div>
+
+        <!-- Hero content -->
+        <div class="hero-content">
+          <div class="hero-text gsap-fade-up">
+            <h1 class="text-hero hero-heading">
+              Build production-ready<br />
+              <span class="text-accent">Agentic AI solutions.</span>
+            </h1>
+            <p class="hero-meta">
+              <span class="hero-stars">● 133.4k stars on <a href="/" class="text-accent">GitHub</a></span>
+            </p>
+          </div>
+
+          <!-- Product grid (4-column inside hero) -->
+          <div class="hero-grid gsap-stagger">
+            <div class="hero-grid__cell hero-grid__cell--main">
+              <p class="text-large hero-desc">
+                Build powerful AI agents and workflows in minutes. Torii brings together agentic pipelines, RAG, integrations, and monitoring — everything you need to ship AI to production.
+              </p>
+              <div class="hero-ctas">
+                <a href="/pricing" class="btn btn--primary">
+                  Start building →
+                </a>
+                <a href="/" class="btn btn--ghost">
+                  View docs
+                </a>
+              </div>
+            </div>
+            <div class="hero-grid__cell hero-grid__cell--feature">
+              <div class="feature-mini">
+                <span class="feature-mini__icon">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <rect x="2" y="2" width="7" height="7" rx="2" fill="#1248ff" opacity="0.2"/>
+                    <rect x="2" y="11" width="7" height="7" rx="2" fill="#1248ff" opacity="0.5"/>
+                    <rect x="11" y="2" width="7" height="7" rx="2" fill="#1248ff" opacity="0.5"/>
+                    <rect x="11" y="11" width="7" height="7" rx="2" fill="#1248ff"/>
+                  </svg>
+                </span>
+                <span class="feature-mini__label">Workflow</span>
+              </div>
+            </div>
+            <div class="hero-grid__cell hero-grid__cell--feature">
+              <div class="feature-mini">
+                <span class="feature-mini__icon">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <circle cx="10" cy="10" r="7" stroke="#1248ff" stroke-width="1.5" stroke-dasharray="3 2"/>
+                    <circle cx="10" cy="10" r="2.5" fill="#1248ff"/>
+                  </svg>
+                </span>
+                <span class="feature-mini__label">Agent</span>
+              </div>
+            </div>
+            <div class="hero-grid__cell hero-grid__cell--feature">
+              <div class="feature-mini">
+                <span class="feature-mini__icon">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M4 6h12M4 10h8M4 14h10" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <span class="feature-mini__label">RAG Pipeline</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logo strip -->
+        <div class="hero-logos">
+          <p class="hero-logos__label">Trusted by teams at</p>
+          <div class="logo-strip">
+            <span class="logo-item logo-item--red">ThermoFisher<br /><small>SCIENTIFIC</small></span>
+            <span class="logo-item logo-item--blue">Panasonic</span>
+            <span class="logo-item logo-item--gray">GLENCORE</span>
+            <span class="logo-item logo-item--orange">kakaku.com</span>
+            <span class="logo-item logo-item--blue2">● NTT</span>
+            <span class="logo-item logo-item--red2">RICOH</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Product Feature Grid ─── -->
+  <section class="section product-grid">
+    <div class="container">
+      <div class="product-cards gsap-stagger">
+        <a href="/" class="product-card">
+          <div class="product-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3" y="3" width="8" height="8" rx="2" fill="#1248ff" opacity="0.15"/>
+              <rect x="13" y="3" width="8" height="8" rx="2" fill="#1248ff" opacity="0.3"/>
+              <rect x="3" y="13" width="8" height="8" rx="2" fill="#1248ff" opacity="0.5"/>
+              <rect x="13" y="13" width="8" height="8" rx="2" fill="#1248ff"/>
+            </svg>
+          </div>
+          <h3 class="product-card__title">Agentic Workflow</h3>
+          <p class="product-card__desc">Build multi-step AI workflows visually with branching logic and parallel execution.</p>
+        </a>
+        <a href="/" class="product-card">
+          <div class="product-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="8" stroke="#1248ff" stroke-width="1.5" stroke-dasharray="4 2"/>
+              <circle cx="12" cy="12" r="3" fill="#1248ff"/>
+              <path d="M12 4V2M12 22v-2M4 12H2M22 12h-2" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="product-card__title">RAG Pipeline</h3>
+          <p class="product-card__desc">Connect your knowledge bases and build retrieval-augmented generation systems in minutes.</p>
+        </a>
+        <a href="/" class="product-card">
+          <div class="product-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3L4 7v5c0 5 3.5 9.7 8 11 4.5-1.3 8-6 8-11V7l-8-4z" stroke="#1248ff" stroke-width="1.5" fill="none"/>
+              <path d="M9 12l2 2 4-4" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="product-card__title">AI Gateway</h3>
+          <p class="product-card__desc">Route requests across 200+ LLMs with fallbacks, load balancing, and cost control.</p>
+        </a>
+        <a href="/" class="product-card">
+          <div class="product-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="3" stroke="#1248ff" stroke-width="1.5"/>
+              <path d="M3 9h18M9 21V9" stroke="#1248ff" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3 class="product-card__title">Observability</h3>
+          <p class="product-card__desc">Monitor every agent run with full trace logs, latency metrics, and cost analytics.</p>
+        </a>
+        <a href="/" class="product-card">
+          <div class="product-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="6" cy="12" r="2.5" fill="#1248ff"/>
+              <circle cx="18" cy="6" r="2.5" fill="#1248ff" opacity="0.5"/>
+              <circle cx="18" cy="18" r="2.5" fill="#1248ff" opacity="0.5"/>
+              <path d="M8.5 11l7-4M8.5 13l7 4" stroke="#1248ff" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3 class="product-card__title">Integrations</h3>
+          <p class="product-card__desc">Connect to Slack, Notion, GitHub, and hundreds of tools with one-click integrations.</p>
+        </a>
+        <a href="/" class="product-card">
+          <div class="product-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" stroke="#1248ff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="product-card__title">Plugin System</h3>
+          <p class="product-card__desc">Extend Torii with custom tools, actions, and integrations from the marketplace.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Build Section (50/50 with mountain photo) ─── -->
+  <section class="section build-section">
+    <div class="container">
+      <div class="split-section bordered-box gsap-fade-up">
+        <div class="split-section__content">
+          <div class="section-label">Build</div>
+          <h2 class="text-h2 build-heading">
+            From idea<br />to impact, fast.<br />
+            <span class="gsap-text-reveal text-accent">AI at your speed.</span>
+          </h2>
+          <ul class="split-benefits">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5L13 5" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Build high-complexity workflows in minutes
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5L13 5" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Seamless integration with every global LLM
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5L13 5" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Deploy with a single click, scale automatically
+            </li>
+          </ul>
+          <a href="/developer" class="btn btn--primary">Explore developer docs →</a>
+        </div>
+        <div class="split-section__image gsap-parallax">
+          <img
+            src={mountainBuild.src}
+            alt="Mountain landscape — build with clarity and scale"
+            width="900"
+            height="600"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Connect Section (50/50 with rocky texture, reversed) ─── -->
+  <section class="section connect-section">
+    <div class="container">
+      <div class="split-section split-section--reverse bordered-box gsap-fade-up">
+        <div class="split-section__image gsap-parallax">
+          <img
+            src={rockyConnect.src}
+            alt="Rocky terrain texture — connect every data source"
+            width="900"
+            height="600"
+            loading="lazy"
+          />
+        </div>
+        <div class="split-section__content">
+          <div class="section-label">Connect</div>
+          <h2 class="text-h2">
+            RAG pipelines,<br />tools, agents —<br />
+            <span class="text-accent">all connected.</span>
+          </h2>
+          <ul class="split-benefits">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5L13 5" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Connect any data source for RAG in seconds
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5L13 5" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              200+ built-in integrations and tools
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5L13 5" stroke="#1248ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Real-time data sync and webhook support
+            </li>
+          </ul>
+          <a href="/startup" class="btn btn--primary">See integrations →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Stats Band (Blue) ─── -->
+  <section class="section--blue stats-section gsap-fade-up">
+    <div class="container">
+      <div class="stats-inner">
+        <div class="stats-tagline">
+          <h2 class="text-h2" style="color: white;">
+            Production-ready<br />from day one.
+          </h2>
+        </div>
+        <div class="stats-cols gsap-stagger">
+          <div class="stats-col">
+            <div class="stats-col__icon">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <path d="M14 4C8.48 4 4 8.48 4 14s4.48 10 10 10 10-4.48 10-10S19.52 4 14 4zm4.59 14.59L13 13V7h2v5.17l5 5-1.41 1.42z" fill="white" opacity="0.8"/>
+              </svg>
+            </div>
+            <h3 class="stats-col__title">Scalable</h3>
+            <p class="stats-col__desc">From prototype to millions of users. Torii scales automatically with your workload, no ops required.</p>
+          </div>
+          <div class="stats-col">
+            <div class="stats-col__icon">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <path d="M14 2.5L4.5 7v8c0 6.5 4.2 12.6 9.5 14 5.3-1.4 9.5-7.5 9.5-14V7L14 2.5z" fill="white" opacity="0.8"/>
+              </svg>
+            </div>
+            <h3 class="stats-col__title">Stable</h3>
+            <p class="stats-col__desc">99.9% uptime SLA. Enterprise-grade reliability with redundant infrastructure across regions.</p>
+          </div>
+          <div class="stats-col">
+            <div class="stats-col__icon">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <path d="M11 14l2 2 4-4m-3-7.94L6 6.5v5.5c0 5 3.3 9.7 8 11 4.7-1.3 8-6 8-11V6.5l-8-2.44z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+              </svg>
+            </div>
+            <h3 class="stats-col__title">Secure</h3>
+            <p class="stats-col__desc">SOC 2 Type II, GDPR compliant. Data never used to train models. Private deployments available.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA Band ─── -->
+  <section class="cta-band gsap-fade-up">
+    <div class="container">
+      <div class="cta-band__inner">
+        <h2 class="text-h2 cta-band__heading">
+          Ready to build your next<br />
+          <span class="text-accent">AI application?</span>
+        </h2>
+        <p class="cta-band__sub">Join 200,000+ developers and teams building with Torii.</p>
+        <div class="cta-band__actions">
+          <a href="/pricing" class="btn btn--primary">Start building for free →</a>
+          <a href="/enterprise" class="btn btn--ghost">Talk to sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding: var(--space-lg) 0 0;
+  }
+
+  .hero-box {
+    overflow: hidden;
+  }
+
+  .hero-content {
+    padding: var(--space-2xl) var(--space-xl) var(--space-xl);
+  }
+
+  .hero-heading {
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-meta {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero-stars a {
+    color: var(--color-accent);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    border-top: var(--border);
+    margin-top: var(--space-xl);
+  }
+
+  .hero-grid__cell {
+    padding: var(--space-xl) var(--space-lg);
+    border-right: var(--border);
+  }
+
+  .hero-grid__cell:last-child {
+    border-right: none;
+  }
+
+  .hero-desc {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xl);
+    max-width: 360px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .feature-mini {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    height: 100%;
+    justify-content: center;
+  }
+
+  .feature-mini__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: var(--border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface-1);
+  }
+
+  .feature-mini__label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+  }
+
+  .hero-logos {
+    padding: var(--space-xl);
+    border-top: var(--border);
+    background: var(--color-surface-1);
+  }
+
+  .hero-logos__label {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-md);
+    font-weight: 600;
+  }
+
+  .logo-item {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    padding: 8px 16px;
+  }
+
+  .logo-item--red { color: #c8102e; }
+  .logo-item--blue { color: #0032a0; }
+  .logo-item--blue2 { color: #0074d9; }
+  .logo-item--gray { color: #333; }
+  .logo-item--orange { color: #e65e00; }
+  .logo-item--red2 { color: #c00; }
+
+  /* Product cards */
+  .product-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .product-card {
+    padding: var(--space-xl) var(--space-lg);
+    border-right: var(--border);
+    border-bottom: var(--border);
+    transition: background 0.15s;
+  }
+
+  .product-card:nth-child(3n) {
+    border-right: none;
+  }
+
+  .product-card:hover {
+    background: var(--color-surface-1);
+  }
+
+  .product-card__icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface-1);
+    margin-bottom: var(--space-md);
+  }
+
+  .product-card__title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-primary);
+  }
+
+  .product-card__desc {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Build / Connect sections */
+  .build-section,
+  .connect-section {
+    padding-top: 0;
+  }
+
+  .split-section--reverse {
+    direction: rtl;
+  }
+
+  .split-section--reverse > * {
+    direction: ltr;
+  }
+
+  .split-benefits {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin: var(--space-xl) 0;
+  }
+
+  .split-benefits li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 15px;
+    color: var(--color-text-secondary);
+  }
+
+  .split-benefits svg {
+    flex-shrink: 0;
+    color: var(--color-accent);
+  }
+
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  /* Stats band */
+  .stats-section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .stats-inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  .stats-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .stats-col__icon {
+    margin-bottom: var(--space-md);
+  }
+
+  .stats-col__title {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: var(--space-sm);
+  }
+
+  .stats-col__desc {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+  }
+
+  /* CTA band */
+  .cta-band {
+    padding: var(--space-3xl) 0;
+    border-top: var(--border);
+  }
+
+  .cta-band__inner {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-band__heading {
+    margin-bottom: var(--space-md);
+  }
+
+  .cta-band__sub {
+    color: var(--color-text-secondary);
+    font-size: 16px;
+    margin-bottom: var(--space-xl);
+  }
+
+  .cta-band__actions {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-grid__cell--main {
+      grid-column: 1 / -1;
+    }
+
+    .stats-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-cols {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-grid__cell {
+      border-right: none;
+      border-bottom: var(--border);
+    }
+
+    .product-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .product-card {
+      border-right: none;
+    }
+
+    .stats-cols {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-inner {
+      gap: var(--space-xl);
+    }
+  }
+</style>

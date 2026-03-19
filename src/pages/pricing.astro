@@ -1,0 +1,759 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Pricing — The right plan for your AI journey"
+  description="Start free. Torii offers flexible plans for individuals, teams, and enterprises building AI applications."
+>
+  <!-- ─── Hero ─── -->
+  <section class="pricing-hero">
+    <div class="container">
+      <div class="bordered-box pricing-hero-box gsap-fade-up">
+        <div class="pricing-hero-content">
+          <h1 class="text-hero pricing-heading">
+            The right plan for<br />
+            <span class="text-accent">your AI journey.</span>
+          </h1>
+          <p class="pricing-sub">Start free. No credit card required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Toggle + Cards ─── -->
+  <section class="section pricing-section">
+    <div class="container">
+      <!-- Plan type toggle -->
+      <div class="plan-toggle gsap-fade-up">
+        <div class="plan-type">
+          <button class="plan-type__btn is-active" data-plan="cloud">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M11.5 9H3.5C2.12 9 1 7.88 1 6.5S2.12 4 3.5 4c.17 0 .34.02.5.05C4.48 2.84 5.64 2 7 2c1.93 0 3.5 1.57 3.5 3.5H11.5C12.33 5.5 13 6.17 13 7S12.33 9 11.5 9z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+            </svg>
+            Cloud
+          </button>
+          <button class="plan-type__btn" data-plan="self-hosted">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <rect x="1" y="4" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M4 4V3a3 3 0 016 0v1" stroke="currentColor" stroke-width="1.2"/>
+              <circle cx="7" cy="8" r="1.5" fill="currentColor"/>
+            </svg>
+            Self-hosted
+          </button>
+        </div>
+        <label class="billing-toggle">
+          <span class="billing-toggle__label">Monthly</span>
+          <button class="billing-toggle__switch" aria-checked="false" role="switch" id="billing-switch">
+            <span class="billing-toggle__thumb"></span>
+          </button>
+          <span class="billing-toggle__label">
+            Annual
+            <span class="billing-badge">Save 20%</span>
+          </span>
+        </label>
+      </div>
+
+      <!-- Pricing cards -->
+      <div class="pricing-cards gsap-stagger">
+        <!-- Sandbox -->
+        <div class="pricing-card">
+          <div class="pricing-card__icon pricing-card__icon--sand">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <rect x="6" y="6" width="28" height="28" rx="4" stroke="#6f7682" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <rect x="12" y="12" width="16" height="16" rx="2" stroke="#6f7682" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3 class="pricing-card__name">Sandbox</h3>
+          <p class="pricing-card__desc">Try core features for free</p>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount">Free</span>
+          </div>
+          <a href="/" class="btn pricing-card__cta pricing-card__cta--outline">Get started free</a>
+          <ul class="pricing-features">
+            <li>200 message credits / month</li>
+            <li>1 workspace</li>
+            <li>Team members: 1</li>
+            <li>Apps: 10</li>
+            <li>50MB knowledge base storage</li>
+            <li>Community support</li>
+          </ul>
+        </div>
+
+        <!-- Professional (featured) -->
+        <div class="pricing-card pricing-card--featured">
+          <div class="pricing-card__badge">Most popular</div>
+          <div class="pricing-card__icon pricing-card__icon--pro">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <circle cx="20" cy="20" r="14" stroke="#1248ff" stroke-width="1.5" stroke-dasharray="5 3"/>
+              <circle cx="20" cy="20" r="7" stroke="#1248ff" stroke-width="1.5"/>
+              <circle cx="20" cy="20" r="2" fill="#1248ff"/>
+            </svg>
+          </div>
+          <h3 class="pricing-card__name text-accent">Professional</h3>
+          <p class="pricing-card__desc">For indie developers & small teams</p>
+          <div class="pricing-card__price">
+            <span class="pricing-card__currency">$</span>
+            <span class="pricing-card__amount" data-monthly="59" data-annual="47">59</span>
+            <span class="pricing-card__period">/ workspace / month</span>
+          </div>
+          <a href="/" class="btn btn--primary pricing-card__cta">Start building →</a>
+          <ul class="pricing-features">
+            <li>5,000 message credits / month</li>
+            <li>1 team workspace</li>
+            <li>Team members: 3</li>
+            <li>Apps: 50</li>
+            <li>5GB knowledge base storage</li>
+            <li>Priority email support</li>
+          </ul>
+        </div>
+
+        <!-- Team -->
+        <div class="pricing-card">
+          <div class="pricing-card__icon pricing-card__icon--team">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <circle cx="14" cy="16" r="5" stroke="#6f7682" stroke-width="1.5"/>
+              <circle cx="26" cy="16" r="5" stroke="#6f7682" stroke-width="1.5"/>
+              <path d="M4 32c0-5.52 4.48-10 10-10M22 32c0-5.52 4.48-10 10-10" stroke="#6f7682" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="pricing-card__name">Team</h3>
+          <p class="pricing-card__desc">For growing mid-size teams</p>
+          <div class="pricing-card__price">
+            <span class="pricing-card__currency">$</span>
+            <span class="pricing-card__amount" data-monthly="159" data-annual="127">159</span>
+            <span class="pricing-card__period">/ workspace / month</span>
+          </div>
+          <a href="/" class="btn btn--black pricing-card__cta">Start building →</a>
+          <ul class="pricing-features">
+            <li>10,000 message credits / month</li>
+            <li>1 team workspace</li>
+            <li>Team members: 50</li>
+            <li>Apps: 200</li>
+            <li>20GB knowledge base storage</li>
+            <li>Dedicated Slack support</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Enterprise CTA -->
+      <div class="enterprise-cta gsap-fade-up">
+        <div class="enterprise-cta__content">
+          <h3>Enterprise</h3>
+          <p>Custom pricing for large organizations. SSO, audit logs, SLA, and dedicated support.</p>
+        </div>
+        <div class="enterprise-cta__actions">
+          <a href="/enterprise" class="btn btn--primary">Talk to sales →</a>
+          <a href="/" class="btn btn--ghost">View enterprise features</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Comparison Table ─── -->
+  <section class="section comparison-section">
+    <div class="container">
+      <h2 class="text-h2 gsap-fade-up" style="margin-bottom: var(--space-xl);">Compare plans</h2>
+      <div class="comparison-table-wrap gsap-fade-up">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th class="comparison-table__feature-col">Feature</th>
+              <th>Sandbox</th>
+              <th class="comparison-table__featured">Professional</th>
+              <th>Team</th>
+              <th>Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="comparison-table__category">
+              <td colspan="5">Workspace &amp; Collaboration</td>
+            </tr>
+            <tr>
+              <td>Team members</td>
+              <td>1</td>
+              <td class="comparison-table__featured">3</td>
+              <td>50</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Workspaces</td>
+              <td>1</td>
+              <td class="comparison-table__featured">1</td>
+              <td>Multiple</td>
+              <td>Custom</td>
+            </tr>
+            <tr>
+              <td>Custom domain</td>
+              <td>—</td>
+              <td class="comparison-table__featured">✓</td>
+              <td>✓</td>
+              <td>✓</td>
+            </tr>
+            <tr class="comparison-table__category">
+              <td colspan="5">AI &amp; Workflow</td>
+            </tr>
+            <tr>
+              <td>Message credits / month</td>
+              <td>200</td>
+              <td class="comparison-table__featured">5,000</td>
+              <td>10,000</td>
+              <td>Custom</td>
+            </tr>
+            <tr>
+              <td>Multi-agent workflows</td>
+              <td>—</td>
+              <td class="comparison-table__featured">✓</td>
+              <td>✓</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>LLM models supported</td>
+              <td>5</td>
+              <td class="comparison-table__featured">200+</td>
+              <td>200+</td>
+              <td>200+</td>
+            </tr>
+            <tr class="comparison-table__category">
+              <td colspan="5">Security &amp; Compliance</td>
+            </tr>
+            <tr>
+              <td>SOC 2 Type II</td>
+              <td>—</td>
+              <td class="comparison-table__featured">—</td>
+              <td>✓</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>SAML / SSO</td>
+              <td>—</td>
+              <td class="comparison-table__featured">—</td>
+              <td>—</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>Audit logs</td>
+              <td>—</td>
+              <td class="comparison-table__featured">—</td>
+              <td>✓</td>
+              <td>✓</td>
+            </tr>
+            <tr class="comparison-table__category">
+              <td colspan="5">Support</td>
+            </tr>
+            <tr>
+              <td>Support channel</td>
+              <td>Community</td>
+              <td class="comparison-table__featured">Email (priority)</td>
+              <td>Slack</td>
+              <td>Dedicated CSM</td>
+            </tr>
+            <tr>
+              <td>SLA uptime</td>
+              <td>—</td>
+              <td class="comparison-table__featured">99.5%</td>
+              <td>99.9%</td>
+              <td>99.99%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Not sure section ─── -->
+  <section class="section not-sure gsap-fade-up">
+    <div class="container">
+      <div class="not-sure__inner">
+        <h3 class="text-h3">Not sure which plan fits?</h3>
+        <p>Our team can help you choose the right plan for your use case, team size, and budget.</p>
+        <div class="not-sure__actions">
+          <a href="/" class="btn btn--primary">Talk to sales →</a>
+          <a href="/" class="btn btn--ghost">Read documentation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─── -->
+  <section class="section faq-section">
+    <div class="container">
+      <h2 class="text-h2 gsap-fade-up" style="margin-bottom: var(--space-xl);">Frequently asked questions</h2>
+      <div class="faq-list gsap-fade-up">
+        {[
+          {
+            q: 'What counts as a message credit?',
+            a: 'A message credit is consumed each time a user sends a message to an AI application or agent built on Torii. One message = one credit regardless of the model used.'
+          },
+          {
+            q: 'Can I switch plans later?',
+            a: 'Yes, you can upgrade or downgrade your plan at any time. When upgrading, you\'ll be billed the prorated difference immediately. Downgrades take effect at the next billing cycle.'
+          },
+          {
+            q: 'Do you offer a free trial for paid plans?',
+            a: 'The Sandbox plan is free forever and gives you a good sense of the platform. For paid plans, we offer a 14-day free trial — no credit card required.'
+          },
+          {
+            q: 'Is my data used to train AI models?',
+            a: 'Never. Your data, prompts, and outputs are never used to train any models. We are SOC 2 Type II certified and take data privacy seriously.'
+          },
+          {
+            q: 'Can I deploy on my own infrastructure?',
+            a: 'Yes! Torii is open source and supports self-hosted deployment on any cloud or on-premise environment. Contact us for enterprise self-hosted licensing.'
+          },
+          {
+            q: 'What payment methods do you accept?',
+            a: 'We accept all major credit cards (Visa, Mastercard, Amex) and can arrange invoicing for annual enterprise plans.'
+          },
+        ].map((item) => (
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              {item.q}
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" aria-hidden="true">
+              <div class="faq-answer-inner">{item.a}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Blue CTA Band ─── -->
+  <section class="section--blue pricing-cta gsap-fade-up">
+    <div class="container">
+      <div class="pricing-cta__inner">
+        <h2 class="text-h2" style="color: white;">Can you build your next AI app?</h2>
+        <a href="/" class="btn" style="background: white; color: var(--color-accent);">
+          Start for free →
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .pricing-hero {
+    padding: var(--space-lg) 0 0;
+  }
+
+  .pricing-hero-box {
+    padding: var(--space-2xl) var(--space-xl);
+  }
+
+  .pricing-heading {
+    margin-bottom: var(--space-md);
+  }
+
+  .pricing-sub {
+    font-size: 18px;
+    color: var(--color-text-secondary);
+  }
+
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  /* Plan toggle */
+  .plan-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .plan-type {
+    display: flex;
+    gap: 2px;
+    background: var(--color-surface-1);
+    border-radius: var(--radius-sm);
+    padding: 3px;
+  }
+
+  .plan-type__btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    border-radius: 3px;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .plan-type__btn.is-active {
+    background: var(--color-bg);
+    color: var(--color-text-primary);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  .billing-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    cursor: pointer;
+  }
+
+  .billing-toggle__label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .billing-toggle__switch {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background: var(--color-surface-2);
+    border-radius: 12px;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+
+  .billing-toggle__switch[aria-checked="true"] {
+    background: var(--color-accent);
+  }
+
+  .billing-toggle__thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  }
+
+  .billing-toggle__switch[aria-checked="true"] .billing-toggle__thumb {
+    transform: translateX(20px);
+  }
+
+  .billing-badge {
+    background: #dcfce7;
+    color: #16a34a;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+
+  /* Pricing cards */
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  .pricing-card {
+    border: var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl) var(--space-lg);
+    position: relative;
+    background: var(--color-bg);
+  }
+
+  .pricing-card--featured {
+    border-color: var(--color-accent);
+    border-width: 2px;
+  }
+
+  .pricing-card__badge {
+    position: absolute;
+    top: -1px;
+    left: var(--space-lg);
+    transform: translateY(-100%);
+    background: var(--color-accent);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .pricing-card__icon {
+    margin-bottom: var(--space-md);
+  }
+
+  .pricing-card__name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .pricing-card__desc {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xl);
+  }
+
+  .pricing-card__price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: var(--space-lg);
+  }
+
+  .pricing-card__currency {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .pricing-card__amount {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .pricing-card__period {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin-left: 4px;
+  }
+
+  .pricing-card__cta {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .pricing-card__cta--outline {
+    background: transparent;
+    border: var(--border);
+    color: var(--color-text-primary);
+  }
+
+  .pricing-card__cta--outline:hover {
+    background: var(--color-surface-1);
+  }
+
+  .pricing-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pricing-features li {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .pricing-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  /* Enterprise CTA */
+  .enterprise-cta {
+    border: var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+    background: var(--color-surface-1);
+  }
+
+  .enterprise-cta h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .enterprise-cta p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+  }
+
+  .enterprise-cta__actions {
+    display: flex;
+    gap: var(--space-sm);
+    flex-shrink: 0;
+    flex-wrap: wrap;
+  }
+
+  /* Comparison table */
+  .comparison-section {
+    border-top: var(--border);
+  }
+
+  .comparison-table-wrap {
+    overflow-x: auto;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 12px 16px;
+    border-bottom: var(--border);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .comparison-table th {
+    font-weight: 700;
+    font-size: 13px;
+    background: var(--color-surface-1);
+    border-top: var(--border);
+  }
+
+  .comparison-table th.comparison-table__featured,
+  .comparison-table td.comparison-table__featured {
+    background: rgba(18, 72, 255, 0.04);
+    color: var(--color-accent);
+  }
+
+  .comparison-table__feature-col {
+    text-align: left;
+  }
+
+  .comparison-table td:first-child {
+    text-align: left;
+    color: var(--color-text-secondary);
+  }
+
+  .comparison-table__category td {
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--color-surface-1);
+    color: var(--color-text-primary);
+    text-align: left;
+    padding: 10px 16px;
+  }
+
+  /* Not sure */
+  .not-sure {
+    border-top: var(--border);
+  }
+
+  .not-sure__inner {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .not-sure__inner h3 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .not-sure__inner p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xl);
+  }
+
+  .not-sure__actions {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* FAQ */
+  .faq-section {
+    border-top: var(--border);
+  }
+
+  /* Blue CTA */
+  .pricing-cta {
+    padding: var(--space-2xl) 0;
+  }
+
+  .pricing-cta__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .pricing-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .enterprise-cta {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .plan-toggle {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .pricing-cta__inner {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  /* Billing toggle. */
+  const billingSwitch = document.getElementById('billing-switch') as HTMLButtonElement | null;
+  billingSwitch?.addEventListener('click', () => {
+    const isAnnual = billingSwitch.getAttribute('aria-checked') === 'true';
+    billingSwitch.setAttribute('aria-checked', String(!isAnnual));
+
+    document.querySelectorAll<HTMLElement>('.pricing-card__amount[data-monthly]').forEach((el) => {
+      el.textContent = isAnnual
+        ? (el.dataset.monthly ?? '0')
+        : (el.dataset.annual ?? '0');
+    });
+  });
+
+  /* Plan type tabs. */
+  document.querySelectorAll<HTMLButtonElement>('.plan-type__btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.plan-type__btn').forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+    });
+  });
+
+  /* FAQ accordion. */
+  document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
+    const question = item.querySelector<HTMLButtonElement>('.faq-question');
+    const answer = item.querySelector<HTMLElement>('.faq-answer');
+    question?.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item').forEach((i) => {
+        i.classList.remove('is-open');
+        i.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
+        const a = i.querySelector<HTMLElement>('.faq-answer');
+        if (a) a.setAttribute('aria-hidden', 'true');
+      });
+      if (!isOpen) {
+        item.classList.add('is-open');
+        question.setAttribute('aria-expanded', 'true');
+        if (answer) answer.setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+</script>

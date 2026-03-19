@@ -1,0 +1,501 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import architectureEnterprise from '../assets/images/architecture-enterprise.jpg';
+---
+
+<BaseLayout
+  title="Partner — Build with Torii, grow together"
+  description="Join the Torii partner ecosystem. Technology partners, solutions partners, and resellers building on the leading AI application platform."
+>
+  <!-- ─── Hero ─── -->
+  <section class="partner-hero section">
+    <div class="container">
+      <div class="partner-hero__inner bordered-box gsap-fade-up">
+        <div class="partner-hero__content">
+          <div class="section-label">Partners</div>
+          <h1 class="text-hero">
+            Build with Torii,<br />
+            <span class="text-accent">grow together.</span>
+          </h1>
+          <p class="text-large" style="color: var(--color-text-secondary); margin: var(--space-md) 0 var(--space-xl); max-width: 520px;">
+            Join our global partner ecosystem and help businesses unlock the power of AI. Access exclusive resources, co-marketing opportunities, and revenue sharing.
+          </p>
+          <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap;">
+            <a href="/" class="btn btn--primary">Become a partner →</a>
+            <a href="/" class="btn btn--ghost">View partner portal</a>
+          </div>
+        </div>
+        <div class="partner-hero__image gsap-parallax">
+          <img
+            src={architectureEnterprise.src}
+            alt="Partner ecosystem architecture"
+            width="600"
+            height="460"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Why Partner ─── -->
+  <section class="section partner-why">
+    <div class="container">
+      <h2 class="text-h2 gsap-fade-up" style="margin-bottom: var(--space-xl);">Why partner with Torii?</h2>
+      <div class="grid-3 gsap-stagger">
+        {[
+          { icon: '📈', title: 'Revenue Sharing', desc: 'Earn competitive referral commissions and recurring revenue on every customer you bring to Torii.' },
+          { icon: '🛠️', title: 'Technical Resources', desc: 'Access dedicated engineering support, sandbox environments, and early access to new features.' },
+          { icon: '📣', title: 'Co-Marketing', desc: 'Joint marketing campaigns, webinars, case studies, and featured placement in the Torii Marketplace.' },
+          { icon: '🎓', title: 'Training & Certification', desc: 'Get your team certified on Torii. Accredited courses and certification badges for sales and engineering.' },
+          { icon: '🤝', title: 'Partner Success', desc: 'Dedicated partner success manager to help you close deals, onboard customers, and grow your practice.' },
+          { icon: '🌍', title: 'Global Network', desc: 'Join a network of 500+ partners across 60+ countries. Collaborate, refer, and build together.' },
+        ].map((item) => (
+          <div class="card partner-why__card">
+            <div class="partner-why__icon">{item.icon}</div>
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: var(--space-sm);">{item.title}</h3>
+            <p style="font-size: 14px; color: var(--color-text-secondary); line-height: 1.6;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Partner Types ─── -->
+  <section class="section partner-types" style="background: var(--color-surface-1);">
+    <div class="container">
+      <h2 class="text-h2 gsap-fade-up" style="margin-bottom: var(--space-xl);">Partnership programs</h2>
+
+      <!-- Tab navigation -->
+      <div class="partner-tabs gsap-fade-up">
+        <button class="partner-tab is-active" data-tab="technology">Technology Partners</button>
+        <button class="partner-tab" data-tab="solutions">Solutions Partners</button>
+        <button class="partner-tab" data-tab="reseller">Reseller Partners</button>
+      </div>
+
+      <!-- Tab content -->
+      <div class="partner-tab-content" id="technology">
+        <div class="partner-type-card">
+          <div class="partner-type-card__left">
+            <div class="section-label">Technology</div>
+            <h3 class="text-h3">Technology Integration Partners</h3>
+            <p style="color: var(--color-text-secondary); margin: var(--space-md) 0; line-height: 1.7;">
+              Build native integrations with Torii and reach 200,000+ developers and businesses. Get listed in our Marketplace and featured in Torii's native integration library.
+            </p>
+            <ul class="partner-type-list">
+              <li>Listed in Torii Marketplace</li>
+              <li>Joint press releases and blog posts</li>
+              <li>Technical co-development support</li>
+              <li>Early API access and beta programs</li>
+              <li>Co-marketing budget available</li>
+            </ul>
+            <a href="/" class="btn btn--primary" style="margin-top: var(--space-xl);">Apply for Technology Partnership →</a>
+          </div>
+          <div class="partner-type-card__right">
+            <div class="partner-companies gsap-stagger">
+              {['OpenAI', 'Anthropic', 'Pinecone', 'Weaviate', 'Qdrant', 'LlamaIndex', 'LangChain', 'Supabase'].map((co) => (
+                <div class="partner-company-pill">{co}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="partner-tab-content is-hidden" id="solutions">
+        <div class="partner-type-card">
+          <div class="partner-type-card__left">
+            <div class="section-label">Solutions</div>
+            <h3 class="text-h3">Solutions Implementation Partners</h3>
+            <p style="color: var(--color-text-secondary); margin: var(--space-md) 0; line-height: 1.7;">
+              Help enterprise customers design, build, and deploy AI solutions on Torii. Earn professional services revenue while building a recurring revenue stream.
+            </p>
+            <ul class="partner-type-list">
+              <li>Preferred referral status</li>
+              <li>20–30% referral commission</li>
+              <li>Joint customer case studies</li>
+              <li>Partner certification program</li>
+              <li>Access to deal registration</li>
+            </ul>
+            <a href="/" class="btn btn--primary" style="margin-top: var(--space-xl);">Apply for Solutions Partnership →</a>
+          </div>
+          <div class="partner-type-card__right">
+            <div class="partner-companies gsap-stagger">
+              {['Accenture', 'Deloitte', 'McKinsey', 'KPMG', 'PwC', 'BCG', 'Infosys', 'Wipro'].map((co) => (
+                <div class="partner-company-pill">{co}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="partner-tab-content is-hidden" id="reseller">
+        <div class="partner-type-card">
+          <div class="partner-type-card__left">
+            <div class="section-label">Reseller</div>
+            <h3 class="text-h3">Reseller & VAR Partners</h3>
+            <p style="color: var(--color-text-secondary); margin: var(--space-md) 0; line-height: 1.7;">
+              Resell Torii licenses to your existing customer base with competitive margins. Ideal for SaaS distributors, cloud marketplaces, and regional VARs.
+            </p>
+            <ul class="partner-type-list">
+              <li>Up to 30% reseller margin</li>
+              <li>White-labeling options available</li>
+              <li>Dedicated reseller portal</li>
+              <li>Co-branded marketing materials</li>
+              <li>Quarterly enablement sessions</li>
+            </ul>
+            <a href="/" class="btn btn--primary" style="margin-top: var(--space-xl);">Apply for Reseller Partnership →</a>
+          </div>
+          <div class="partner-type-card__right">
+            <div class="partner-companies gsap-stagger">
+              {['AWS Marketplace', 'Azure Marketplace', 'GCP Marketplace', 'Salesforce AppEx', 'HubSpot Apps', 'Shopify Partners', 'Atlassian Marketplace', 'Twilio'].map((co) => (
+                <div class="partner-company-pill">{co}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Partner Support ─── -->
+  <section class="section partner-support">
+    <div class="container">
+      <div class="partner-support__grid gsap-stagger">
+        <div class="partner-support__col">
+          <h2 class="text-h2">Full support<br /><span class="text-accent">from day one.</span></h2>
+          <p style="color: var(--color-text-secondary); margin: var(--space-md) 0; line-height: 1.7;">
+            Our partner team is here to help you succeed. From technical onboarding to sales enablement, we invest in your growth.
+          </p>
+          <div class="partner-stats">
+            <div class="partner-stat">
+              <span class="partner-stat__num">500+</span>
+              <span class="partner-stat__label">Global partners</span>
+            </div>
+            <div class="partner-stat">
+              <span class="partner-stat__num">60+</span>
+              <span class="partner-stat__label">Countries</span>
+            </div>
+            <div class="partner-stat">
+              <span class="partner-stat__num">$10M+</span>
+              <span class="partner-stat__label">Partner revenue in 2024</span>
+            </div>
+          </div>
+        </div>
+        <div class="partner-support__col">
+          <div class="partner-support__items">
+            {[
+              { icon: '📋', title: 'Onboarding', desc: 'Guided onboarding with your dedicated partner success manager.' },
+              { icon: '📚', title: 'Enablement', desc: 'Sales playbooks, technical docs, and training for your entire team.' },
+              { icon: '📣', title: 'Co-Marketing', desc: 'Joint campaigns, webinars, and content co-creation opportunities.' },
+              { icon: '🏆', title: 'Recognition', desc: 'Annual partner awards, featured case studies, and thought leadership.' },
+            ].map((item) => (
+              <div class="partner-support__item">
+                <span class="partner-support__item-icon">{item.icon}</span>
+                <div>
+                  <div style="font-weight: 600; margin-bottom: 4px;">{item.title}</div>
+                  <div style="font-size: 14px; color: var(--color-text-secondary);">{item.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─── -->
+  <section class="section faq-section">
+    <div class="container">
+      <h2 class="text-h2 gsap-fade-up" style="margin-bottom: var(--space-xl);">Frequently asked questions</h2>
+      <div class="faq-list gsap-fade-up">
+        {[
+          { q: 'How do I apply to become a partner?', a: 'Fill out our partner application form. Our team reviews applications within 3 business days. We\'ll reach out to schedule an intro call to discuss the best partnership type for your business.' },
+          { q: 'Is there a fee to join the partner program?', a: 'No. Joining the Torii partner program is free. There are no annual fees or minimum commitment requirements to participate.' },
+          { q: 'How are referral commissions calculated?', a: 'Commission rates range from 15–30% of the first year\'s contract value, depending on your partner tier. Recurring revenue commissions are available for top-tier partners.' },
+          { q: 'Can I white-label Torii for my customers?', a: 'White-labeling is available for Reseller partners at the Gold tier and above. Contact our partnerships team to discuss white-label terms and technical requirements.' },
+          { q: 'What certifications does Torii offer?', a: 'Torii offers Sales Certification, Solutions Architect Certification, and Developer Certification. All are included with partner enrollment at no extra cost.' },
+        ].map((item) => (
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              {item.q}
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" aria-hidden="true">
+              <div class="faq-answer-inner">{item.a}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Blue CTA ─── -->
+  <section class="section--blue partner-cta gsap-fade-up">
+    <div class="container">
+      <div class="partner-cta__inner">
+        <h2 class="text-h2" style="color: white;">Ready to grow together?</h2>
+        <p style="color: rgba(255,255,255,0.75); margin: var(--space-sm) 0 var(--space-xl);">
+          Join 500+ partners building with Torii across 60+ countries.
+        </p>
+        <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap; justify-content: center;">
+          <a href="/" class="btn" style="background: white; color: var(--color-accent);">Apply now →</a>
+          <a href="/" class="btn btn--ghost-white">Contact partnerships team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .text-accent { color: var(--color-accent); }
+
+  /* Hero */
+  .partner-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .partner-hero__content {
+    padding: var(--space-2xl) var(--space-xl);
+  }
+
+  .partner-hero__image {
+    position: relative;
+    overflow: hidden;
+    min-height: 460px;
+  }
+
+  .partner-hero__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Why section */
+  .partner-why__icon {
+    font-size: 28px;
+    margin-bottom: var(--space-sm);
+  }
+
+  /* Partner tabs */
+  .partner-tabs {
+    display: flex;
+    gap: 2px;
+    background: var(--color-surface-2);
+    border-radius: var(--radius-md);
+    padding: 4px;
+    width: fit-content;
+    margin-bottom: var(--space-xl);
+  }
+
+  .partner-tab {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    border-radius: calc(var(--radius-md) - 2px);
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+
+  .partner-tab.is-active {
+    background: white;
+    color: var(--color-text-primary);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  .partner-tab-content {
+    display: block;
+  }
+
+  .partner-tab-content.is-hidden {
+    display: none;
+  }
+
+  .partner-type-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    border: var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    background: white;
+    align-items: start;
+  }
+
+  .partner-type-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .partner-type-list li {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .partner-type-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  .partner-companies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    padding-top: var(--space-xl);
+  }
+
+  .partner-company-pill {
+    padding: 6px 14px;
+    border: var(--border);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    background: white;
+  }
+
+  /* Partner support */
+  .partner-support {
+    border-top: var(--border);
+  }
+
+  .partner-support__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: start;
+  }
+
+  .partner-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+    border-top: var(--border);
+    padding-top: var(--space-xl);
+  }
+
+  .partner-stat__num {
+    display: block;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-accent);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .partner-stat__label {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+  }
+
+  .partner-support__items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .partner-support__item {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .partner-support__item-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface-1);
+  }
+
+  /* CTA */
+  .partner-cta {
+    padding: var(--space-2xl) 0;
+  }
+
+  .partner-cta__inner {
+    text-align: center;
+  }
+
+  /* FAQ */
+  .faq-section { border-top: var(--border); }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .partner-hero__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .partner-hero__image {
+      min-height: 280px;
+    }
+
+    .partner-type-card {
+      grid-template-columns: 1fr;
+    }
+
+    .partner-support__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .partner-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .partner-tabs {
+      flex-wrap: wrap;
+    }
+  }
+</style>
+
+<script>
+  /* Partner type tabs. */
+  document.querySelectorAll<HTMLButtonElement>('.partner-tab').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      document.querySelectorAll('.partner-tab').forEach((t) => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
+      document.querySelectorAll<HTMLElement>('.partner-tab-content').forEach((content) => {
+        content.classList.toggle('is-hidden', content.id !== target);
+      });
+    });
+  });
+
+  /* FAQ accordion. */
+  document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
+    const question = item.querySelector<HTMLButtonElement>('.faq-question');
+    const answer = item.querySelector<HTMLElement>('.faq-answer');
+    question?.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item').forEach((i) => {
+        i.classList.remove('is-open');
+        i.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
+        const a = i.querySelector<HTMLElement>('.faq-answer');
+        if (a) a.setAttribute('aria-hidden', 'true');
+      });
+      if (!isOpen) {
+        item.classList.add('is-open');
+        question.setAttribute('aria-expanded', 'true');
+        if (answer) answer.setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+</script>
