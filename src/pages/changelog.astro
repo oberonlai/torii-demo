@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const releases = [
+  { version: 'v2.1.0', date: 'March 15, 2026', title: 'Multi-modal agent support', items: ['Added vision and audio input for agents', 'New workflow node: Media Processor', 'Improved SDK type safety', 'Bug fixes and performance improvements'] },
+  { version: 'v2.0.0', date: 'February 28, 2026', title: 'Multi-agent workflows', items: ['General availability of multi-agent orchestration', 'New visual workflow editor', 'Agent-to-agent communication protocol', 'Enterprise SSO integration', 'Breaking: Updated SDK to v2'] },
+  { version: 'v1.8.0', date: 'January 20, 2026', title: 'RAG pipeline improvements', items: ['Hybrid search (vector + keyword)', 'Document chunking strategies', 'Source citation in responses', 'New embedding model support'] },
+  { version: 'v1.7.0', date: 'December 10, 2025', title: 'Observability & monitoring', items: ['Real-time trace viewer', 'Cost tracking per workflow', 'Custom metrics and alerts', 'Prometheus exporter'] },
+  { version: 'v1.6.0', date: 'November 1, 2025', title: 'Platform launch', items: ['Initial public release', 'Visual workflow builder', '50+ LLM integrations', 'REST API and TypeScript SDK'] },
+];
+---
+
+<BaseLayout title="Changelog — Torii" description="See what's new in Torii. Release notes, new features, and improvements.">
+
+  <section class="section">
+    <div class="container">
+      <div class="page-header gsap-fade-up">
+        <div class="section-label">Changelog</div>
+        <h1 class="text-hero">What's new in<br /><span class="text-accent">Torii.</span></h1>
+        <p class="text-large" style="color: var(--color-text-secondary); max-width: 560px; margin-top: var(--space-lg);">A timeline of releases, features, and improvements.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="changelog-list">
+        {releases.map((release) => (
+          <article class="changelog-entry gsap-fade-up">
+            <div class="changelog-meta">
+              <span class="changelog-version">{release.version}</span>
+              <time class="changelog-date">{release.date}</time>
+            </div>
+            <div class="changelog-body">
+              <h2 class="changelog-title">{release.title}</h2>
+              <ul class="changelog-items">
+                {release.items.map((item) => <li>{item}</li>)}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-header { max-width: 720px; }
+  .changelog-list { display: grid; gap: 0; max-width: 720px; }
+  .changelog-entry { display: grid; grid-template-columns: 180px 1fr; gap: var(--space-xl); padding: var(--space-xl) 0; border-bottom: 1px solid var(--border-color); }
+  .changelog-meta { display: flex; flex-direction: column; gap: 4px; }
+  .changelog-version { font-size: 14px; font-weight: 700; color: var(--color-accent); }
+  .changelog-date { font-size: 13px; color: var(--color-text-secondary); }
+  .changelog-title { font-size: 20px; font-weight: 700; margin-bottom: var(--space-sm); }
+  .changelog-items { padding-left: 20px; display: grid; gap: 6px; color: var(--color-text-secondary); font-size: 15px; }
+  @media (max-width: 640px) { .changelog-entry { grid-template-columns: 1fr; gap: var(--space-sm); } }
+</style>

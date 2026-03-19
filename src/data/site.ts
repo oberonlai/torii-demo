@@ -4,49 +4,56 @@ export const siteDescription =
   'Torii is the platform for building, deploying, and scaling AI-powered applications and agents. From idea to production in minutes.';
 
 export const navLinks = [
-  { label: 'Products', href: '/', hasDropdown: true },
-  { label: 'Solutions', href: '/', hasDropdown: true },
+  {
+    label: 'Products',
+    href: '/',
+    hasDropdown: true,
+    children: [
+      { label: 'Developer', href: '/developer', description: 'APIs, SDKs, and extensibility tools' },
+      { label: 'Enterprise', href: '/enterprise', description: 'Security, compliance, and scale' },
+      { label: 'Education', href: '/education', description: 'Programs for students and institutions' },
+    ],
+  },
+  {
+    label: 'Solutions',
+    href: '/',
+    hasDropdown: true,
+    children: [
+      { label: 'Startup', href: '/startup', description: 'From idea to impact, fast' },
+      { label: 'Partner', href: '/partner', description: 'Join the Torii ecosystem' },
+    ],
+  },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Docs', href: '/' },
-  { label: 'Blog', href: '/' },
-  { label: 'Community', href: '/' },
+  { label: 'Developer', href: '/developer' },
+  { label: 'Enterprise', href: '/enterprise' },
 ];
 
 export const footerLinks = [
   {
     heading: 'Product',
     links: [
-      { label: 'Features', href: '/' },
+      { label: 'Home', href: '/' },
       { label: 'Pricing', href: '/pricing' },
-      { label: 'Changelog', href: '/' },
-      { label: 'Roadmap', href: '/' },
+      { label: 'Developer', href: '/developer' },
+      { label: 'Changelog', href: '/changelog' },
+      { label: 'Roadmap', href: '/roadmap' },
     ],
   },
   {
     heading: 'Solutions',
     links: [
-      { label: 'Developer', href: '/developer' },
       { label: 'Startup', href: '/startup' },
       { label: 'Enterprise', href: '/enterprise' },
       { label: 'Education', href: '/education' },
-    ],
-  },
-  {
-    heading: 'Resources',
-    links: [
-      { label: 'Documentation', href: '/' },
-      { label: 'API Reference', href: '/' },
-      { label: 'Blog', href: '/' },
-      { label: 'Community', href: '/' },
+      { label: 'Partner', href: '/partner' },
     ],
   },
   {
     heading: 'Company',
     links: [
-      { label: 'About', href: '/' },
-      { label: 'Careers', href: '/' },
-      { label: 'Partner', href: '/partner' },
-      { label: 'Contact', href: '/' },
+      { label: 'About', href: '/about' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'Contact', href: '/contact' },
     ],
   },
 ];

@@ -26,18 +26,35 @@ function isActive(href: string) {
     <!-- Center nav links -->
     <nav class="nav-links" aria-label="Main navigation">
       {navLinks.map((link) => (
-        <a
-          href={link.href}
-          data-nav-link
-          class:list={['nav-link', { 'is-active': isActive(link.href) }]}
-        >
-          {link.label}
-          {link.hasDropdown && (
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          )}
-        </a>
+        link.hasDropdown && link.children ? (
+          <div class="nav-dropdown">
+            <button
+              class:list={['nav-link nav-link--dropdown', { 'is-active': link.children.some((c: any) => isActive(c.href)) }]}
+              aria-expanded="false"
+            >
+              {link.label}
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="nav-dropdown__panel">
+              {link.children.map((child: any) => (
+                <a href={child.href} data-nav-link class="nav-dropdown__item">
+                  <span class="nav-dropdown__label">{child.label}</span>
+                  {child.description && <span class="nav-dropdown__desc">{child.description}</span>}
+                </a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a
+            href={link.href}
+            data-nav-link
+            class:list={['nav-link', { 'is-active': isActive(link.href) }]}
+          >
+            {link.label}
+          </a>
+        )
       ))}
     </nav>
 
@@ -124,6 +141,60 @@ function isActive(href: string) {
   .nav-link:hover,
   .nav-link.is-active {
     color: var(--color-text-primary);
+  }
+
+  .nav-link--dropdown {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .nav-dropdown {
+    position: relative;
+  }
+
+  .nav-dropdown__panel {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 260px;
+    padding: 8px;
+    background: var(--color-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    z-index: 200;
+  }
+
+  .nav-dropdown.is-open .nav-dropdown__panel {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-dropdown__item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    transition: background 0.15s;
+  }
+
+  .nav-dropdown__item:hover {
+    background: var(--color-surface-1);
+  }
+
+  .nav-dropdown__label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .nav-dropdown__desc {
+    font-size: 12px;
+    color: var(--color-text-secondary);
   }
 
   .nav-actions {
@@ -222,6 +293,25 @@ function isActive(href: string) {
     burger.setAttribute('aria-expanded', String(!isOpen));
     if (mobileMenu) {
       mobileMenu.classList.toggle('is-open', !isOpen);
+    }
+  });
+
+  // Dropdown toggle
+  document.querySelectorAll('.nav-dropdown').forEach((dropdown) => {
+    const btn = dropdown.querySelector('.nav-link--dropdown');
+    btn?.addEventListener('click', () => {
+      // Close other dropdowns.
+      document.querySelectorAll('.nav-dropdown.is-open').forEach((d) => {
+        if (d !== dropdown) d.classList.remove('is-open');
+      });
+      dropdown.classList.toggle('is-open');
+    });
+  });
+
+  // Close dropdowns on click outside.
+  document.addEventListener('click', (e) => {
+    if (!(e.target as Element).closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.is-open').forEach((d) => d.classList.remove('is-open'));
     }
   });
 </script>

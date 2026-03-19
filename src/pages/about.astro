@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About — Torii" description="Learn about Torii's mission to democratize AI development for teams of all sizes.">
+
+  <section class="section">
+    <div class="container">
+      <div class="page-header gsap-fade-up">
+        <div class="section-label">About</div>
+        <h1 class="text-hero">Building the future<br /><span class="text-accent">of AI development.</span></h1>
+        <p class="text-large" style="color: var(--color-text-secondary); max-width: 640px; margin-top: var(--space-lg);">Torii was founded with a simple belief: every team should be able to build production-ready AI applications without wrestling with infrastructure complexity.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-surface-1);">
+    <div class="container">
+      <div class="split-layout gsap-fade-up">
+        <div>
+          <h2 class="section-headline">Our mission</h2>
+          <p class="text-large" style="color: var(--color-text-secondary);">We believe AI should be accessible to every developer, not just ML engineers at large companies. Torii provides the tools, infrastructure, and workflows that let small teams ship AI-powered products with the same reliability as the biggest players.</p>
+        </div>
+        <div>
+          <h2 class="section-headline">Our values</h2>
+          <ul style="list-style: none; padding: 0; display: grid; gap: var(--space-md);">
+            <li><strong>Simplicity first</strong> — Complex problems deserve simple interfaces.</li>
+            <li><strong>Production-grade</strong> — Everything we ship is ready for real traffic.</li>
+            <li><strong>Open by default</strong> — We build in the open and contribute back.</li>
+            <li><strong>Developer empathy</strong> — We use our own tools every day.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="stats-band gsap-fade-up">
+        <div class="stat-item">
+          <span class="stat-number">50,000+</span>
+          <span class="stat-label">Teams worldwide</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">150+</span>
+          <span class="stat-label">LLM integrations</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">99.9%</span>
+          <span class="stat-label">Platform uptime</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">2023</span>
+          <span class="stat-label">Founded</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section" style="background: var(--color-accent); color: white;">
+    <div class="container" style="text-align: center;">
+      <h2 class="section-headline" style="color: white;">Join us on this journey</h2>
+      <p style="color: rgba(255,255,255,0.8); max-width: 480px; margin: var(--space-md) auto var(--space-xl);">We're always looking for talented people who share our passion for making AI accessible.</p>
+      <a href="/contact" class="btn" style="background: white; color: var(--color-accent);">Get in touch →</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-header { max-width: 720px; }
+  .split-layout { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: start; }
+  .stats-band { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-xl); text-align: center; padding: var(--space-2xl) 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+  .stat-number { display: block; font-size: 48px; font-weight: 800; color: var(--color-text-primary); letter-spacing: -0.02em; }
+  .stat-label { display: block; font-size: 14px; color: var(--color-text-secondary); margin-top: 4px; }
+  @media (max-width: 768px) {
+    .split-layout { grid-template-columns: 1fr; }
+    .stats-band { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

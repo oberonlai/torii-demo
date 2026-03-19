@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact — Torii" description="Get in touch with the Torii team. We'd love to hear from you.">
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout gsap-fade-up">
+        <div class="contact-info">
+          <div class="section-label">Contact</div>
+          <h1 class="text-hero">Let's start a<br /><span class="text-accent">conversation.</span></h1>
+          <p class="text-large" style="color: var(--color-text-secondary); margin: var(--space-lg) 0;">Whether you have a question about features, pricing, or anything else — our team is ready to answer.</p>
+          <div style="display: grid; gap: var(--space-md); margin-top: var(--space-xl);">
+            <div><strong>Email</strong><br /><span style="color: var(--color-text-secondary);">hello@torii.dev</span></div>
+            <div><strong>Sales</strong><br /><span style="color: var(--color-text-secondary);">sales@torii.dev</span></div>
+            <div><strong>Support</strong><br /><span style="color: var(--color-text-secondary);">support@torii.dev</span></div>
+          </div>
+        </div>
+        <div class="contact-form-wrap">
+          <form class="contact-form">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required />
+            </div>
+            <div class="form-field">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option>General inquiry</option>
+                <option>Sales</option>
+                <option>Support</option>
+                <option>Partnership</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary" style="width: 100%;">Send message →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: start; }
+  .contact-info { max-width: 480px; }
+  .contact-form { display: grid; gap: var(--space-lg); padding: var(--space-xl); background: var(--color-surface-1); border: 1px solid var(--border-color); border-radius: 8px; }
+  .form-field { display: grid; gap: 6px; }
+  .form-field label { font-size: 14px; font-weight: 600; color: var(--color-text-primary); }
+  .form-field input, .form-field select, .form-field textarea { padding: 10px 14px; font-size: 15px; border: 1px solid var(--border-color); border-radius: 4px; background: var(--color-bg); color: var(--color-text-primary); font-family: inherit; }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: none; border-color: var(--color-accent); }
+  @media (max-width: 768px) { .contact-layout { grid-template-columns: 1fr; } }
+</style>

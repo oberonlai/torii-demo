@@ -1,0 +1,59 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={`${post.data.title} — Torii Blog`} description={post.data.description}>
+
+  <section class="section">
+    <div class="container">
+      <article class="post gsap-fade-up">
+        <div class="post-header">
+          <a href="/blog" class="post-back">← Back to blog</a>
+          <div class="post-tags">
+            {post.data.tags.map((tag) => (
+              <span class="blog-tag">{tag}</span>
+            ))}
+          </div>
+          <h1 class="text-hero" style="font-size: clamp(2rem, 5vw, 3.5rem);">{post.data.title}</h1>
+          <div class="post-meta">
+            <time>{post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+            <span>·</span>
+            <span>{post.data.author}</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <Content />
+        </div>
+      </article>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .post { max-width: 720px; }
+  .post-back { display: inline-block; font-size: 14px; color: var(--color-accent); margin-bottom: var(--space-xl); }
+  .post-back:hover { text-decoration: underline; }
+  .post-tags { display: flex; gap: 6px; margin-bottom: var(--space-md); }
+  .blog-tag { font-size: 12px; font-weight: 600; color: var(--color-accent); padding: 2px 8px; border: 1px solid var(--color-accent); border-radius: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .post-meta { font-size: 14px; color: var(--color-text-secondary); display: flex; gap: 6px; margin-top: var(--space-md); }
+  .post-body { margin-top: var(--space-2xl); }
+  .post-body :global(h2) { font-size: 24px; font-weight: 700; margin: var(--space-2xl) 0 var(--space-md); }
+  .post-body :global(p) { font-size: 16px; line-height: 1.75; color: var(--color-text-secondary); margin-bottom: var(--space-lg); }
+  .post-body :global(ul), .post-body :global(ol) { padding-left: 24px; margin-bottom: var(--space-lg); color: var(--color-text-secondary); line-height: 1.75; }
+  .post-body :global(code) { font-size: 14px; padding: 2px 6px; background: var(--color-surface-1); border-radius: 4px; }
+  .post-body :global(a) { color: var(--color-accent); }
+  .post-body :global(a:hover) { text-decoration: underline; }
+</style>

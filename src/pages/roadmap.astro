@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const phases = [
+  { status: 'shipped', label: 'Shipped', items: ['Multi-agent workflows', 'Visual workflow editor', 'RAG pipeline builder', 'Real-time observability', '150+ LLM integrations'] },
+  { status: 'building', label: 'In Progress', items: ['Plugin marketplace', 'Self-hosted deployment wizard', 'Advanced caching layer', 'Team collaboration features'] },
+  { status: 'planned', label: 'Planned', items: ['Mobile SDK', 'Fine-tuning pipeline', 'A/B testing for prompts', 'Compliance reporting dashboard', 'On-premise air-gapped mode'] },
+  { status: 'exploring', label: 'Exploring', items: ['Voice agent framework', 'Computer use integration', 'Multi-cloud orchestration', 'White-label solution'] },
+];
+---
+
+<BaseLayout title="Roadmap — Torii" description="See where Torii is headed. Our product roadmap and upcoming features.">
+
+  <section class="section">
+    <div class="container">
+      <div class="page-header gsap-fade-up">
+        <div class="section-label">Roadmap</div>
+        <h1 class="text-hero">Where we're<br /><span class="text-accent">headed.</span></h1>
+        <p class="text-large" style="color: var(--color-text-secondary); max-width: 560px; margin-top: var(--space-lg);">Our product roadmap is shaped by customer feedback and our vision for the future of AI development.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="roadmap-grid">
+        {phases.map((phase) => (
+          <div class:list={['roadmap-column', `roadmap-column--${phase.status}`]} data-reveal>
+            <div class="roadmap-header">
+              <span class:list={['roadmap-badge', `roadmap-badge--${phase.status}`]}>{phase.label}</span>
+            </div>
+            <ul class="roadmap-items">
+              {phase.items.map((item) => (
+                <li class="roadmap-item">
+                  <span class:list={['roadmap-dot', `roadmap-dot--${phase.status}`]}></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section" style="background: var(--color-accent); color: white;">
+    <div class="container" style="text-align: center;">
+      <h2 class="section-headline" style="color: white;">Have a feature request?</h2>
+      <p style="color: rgba(255,255,255,0.8); max-width: 480px; margin: var(--space-md) auto var(--space-xl);">We love hearing from our users. Let us know what you'd like to see next.</p>
+      <a href="/contact" class="btn" style="background: white; color: var(--color-accent);">Share your idea →</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-header { max-width: 720px; }
+  .roadmap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); }
+  .roadmap-column { padding: var(--space-lg); background: var(--color-surface-1); border: 1px solid var(--border-color); border-radius: 8px; }
+  .roadmap-header { margin-bottom: var(--space-lg); }
+  .roadmap-badge { display: inline-block; padding: 4px 12px; font-size: 12px; font-weight: 600; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .roadmap-badge--shipped { background: #e8f5e9; color: #2e7d32; }
+  .roadmap-badge--building { background: #e3f2fd; color: #1565c0; }
+  .roadmap-badge--planned { background: #fff3e0; color: #e65100; }
+  .roadmap-badge--exploring { background: #f3e5f5; color: #7b1fa2; }
+  .roadmap-items { list-style: none; padding: 0; display: grid; gap: var(--space-md); }
+  .roadmap-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--color-text-primary); }
+  .roadmap-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+  .roadmap-dot--shipped { background: #2e7d32; }
+  .roadmap-dot--building { background: #1565c0; }
+  .roadmap-dot--planned { background: #e65100; }
+  .roadmap-dot--exploring { background: #7b1fa2; }
+  @media (max-width: 900px) { .roadmap-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .roadmap-grid { grid-template-columns: 1fr; } }
+</style>
