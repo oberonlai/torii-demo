@@ -33,7 +33,7 @@ jobs:
         run: npm run build
         env:
           DEMO_SITE: https://oberonlai.github.io
-          DEMO_BASE: /torii-demo
+          DEMO_BASE: /torii-demo/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
