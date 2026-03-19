@@ -20,7 +20,7 @@ const { Content } = await render(post);
     <div class="container">
       <article class="post gsap-fade-up">
         <div class="post-header">
-          <a href="/blog" class="post-back">← Back to blog</a>
+          <a href={`${import.meta.env.BASE_URL}blog/`} class="post-back">← Back to blog</a>
           <div class="post-tags">
             {post.data.tags.map((tag) => (
               <span class="blog-tag">{tag}</span>
