@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/paths';
 
 const phases = [
   { status: 'shipped', label: 'Shipped', items: ['Multi-agent workflows', 'Visual workflow editor', 'RAG pipeline builder', 'Real-time observability', '150+ LLM integrations'] },
@@ -47,7 +48,7 @@ const phases = [
     <div class="container" style="text-align: center;">
       <h2 class="section-headline" style="color: white;">Have a feature request?</h2>
       <p style="color: rgba(255,255,255,0.8); max-width: 480px; margin: var(--space-md) auto var(--space-xl);">We love hearing from our users. Let us know what you'd like to see next.</p>
-      <a href="/contact" class="btn" style="background: white; color: var(--color-accent);">Share your idea →</a>
+      <a href={withBase("/contact")} class="btn" style="background: white; color: var(--color-accent);">Share your idea →</a>
     </div>
   </section>
 

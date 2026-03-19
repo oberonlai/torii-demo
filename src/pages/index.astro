@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/paths';
 import mountainBuild from '../assets/images/mountain-build.jpg';
 import rockyConnect from '../assets/images/rocky-connect.jpg';
 ---
@@ -16,7 +17,7 @@ import rockyConnect from '../assets/images/rocky-connect.jpg';
         <div class="announcement-bar">
           <span class="announcement-bar__pill">v2.0 Release</span>
           <span>Multi-agent workflows now in general availability</span>
-          <a href="/" class="announcement-bar__link">Learn more ↗</a>
+          <a href={withBase("/")} class="announcement-bar__link">Learn more ↗</a>
         </div>
 
         <!-- Hero content -->
@@ -27,7 +28,7 @@ import rockyConnect from '../assets/images/rocky-connect.jpg';
               <span class="text-accent">Agentic AI solutions.</span>
             </h1>
             <p class="hero-meta">
-              <span class="hero-stars">● 133.4k stars on <a href="/" class="text-accent">GitHub</a></span>
+              <span class="hero-stars">● 133.4k stars on <a href={withBase("/")} class="text-accent">GitHub</a></span>
             </p>
           </div>
 
@@ -38,10 +39,10 @@ import rockyConnect from '../assets/images/rocky-connect.jpg';
                 Build powerful AI agents and workflows in minutes. Torii brings together agentic pipelines, RAG, integrations, and monitoring — everything you need to ship AI to production.
               </p>
               <div class="hero-ctas">
-                <a href="/pricing" class="btn btn--primary">
+                <a href={withBase("/pricing")} class="btn btn--primary">
                   Start building →
                 </a>
-                <a href="/" class="btn btn--ghost">
+                <a href={withBase("/")} class="btn btn--ghost">
                   View docs
                 </a>
               </div>
@@ -103,7 +104,7 @@ import rockyConnect from '../assets/images/rocky-connect.jpg';
   <section class="section product-grid">
     <div class="container">
       <div class="product-cards gsap-stagger">
-        <a href="/" class="product-card">
+        <a href={withBase("/")} class="product-card">
           <div class="product-card__icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <rect x="3" y="3" width="8" height="8" rx="2" fill="#1248ff" opacity="0.15"/>
@@ -115,7 +116,7 @@ import rockyConnect from '../assets/images/rocky-connect.jpg';
           <h3 class="product-card__title">Agentic Workflow</h3>
           <p class="product-card__desc">Build multi-step AI workflows visually with branching logic and parallel execution.</p>
         </a>
-        <a href="/" class="product-card">
+        <a href={withBase("/")} class="product-card">
           <div class="product-card__icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <circle cx="12" cy="12" r="8" stroke="#1248ff" stroke-width="1.5" stroke-dasharray="4 2"/>
@@ -126,7 +127,7 @@ import rockyConnect from '../assets/images/rocky-connect.jpg';
           <h3 class="product-card__title">RAG Pipeline</h3>
           <p class="product-card__desc">Connect your knowledge bases and build retrieval-augmented generation systems in minutes.</p>
         </a>
-        <a href="/" class="product-card">
+        <a href={withBase("/")} class="product-card">
           <div class="product-card__icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M12 3L4 7v5c0 5 3.5 9.7 8 11 4.5-1.3 8-6 8-11V7l-8-4z" stroke="#1248ff" stroke-width="1.5" fill="none"/>
@@ -136,7 +137,7 @@ import rockyConnect from '../assets/images/rocky-connect.jpg';
           <h3 class="product-card__title">AI Gateway</h3>
           <p class="product-card__desc">Route requests across 200+ LLMs with fallbacks, load balancing, and cost control.</p>
         </a>
-        <a href="/" class="product-card">
+        <a href={withBase("/")} class="product-card">
           <div class="product-card__icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <rect x="3" y="3" width="18" height="18" rx="3" stroke="#1248ff" stroke-width="1.5"/>
@@ -146,7 +147,7 @@ import rockyConnect from '../assets/images/rocky-connect.jpg';
           <h3 class="product-card__title">Observability</h3>
           <p class="product-card__desc">Monitor every agent run with full trace logs, latency metrics, and cost analytics.</p>
         </a>
-        <a href="/" class="product-card">
+        <a href={withBase("/")} class="product-card">
           <div class="product-card__icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <circle cx="6" cy="12" r="2.5" fill="#1248ff"/>
@@ -158,7 +159,7 @@ import rockyConnect from '../assets/images/rocky-connect.jpg';
           <h3 class="product-card__title">Integrations</h3>
           <p class="product-card__desc">Connect to Slack, Notion, GitHub, and hundreds of tools with one-click integrations.</p>
         </a>
-        <a href="/" class="product-card">
+        <a href={withBase("/")} class="product-card">
           <div class="product-card__icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" stroke="#1248ff" stroke-width="2" stroke-linecap="round"/>
@@ -201,7 +202,7 @@ import rockyConnect from '../assets/images/rocky-connect.jpg';
               Deploy with a single click, scale automatically
             </li>
           </ul>
-          <a href="/developer" class="btn btn--primary">Explore developer docs →</a>
+          <a href={withBase("/developer")} class="btn btn--primary">Explore developer docs →</a>
         </div>
         <div class="split-section__image gsap-parallax">
           <img
@@ -255,7 +256,7 @@ import rockyConnect from '../assets/images/rocky-connect.jpg';
               Real-time data sync and webhook support
             </li>
           </ul>
-          <a href="/startup" class="btn btn--primary">See integrations →</a>
+          <a href={withBase("/startup")} class="btn btn--primary">See integrations →</a>
         </div>
       </div>
     </div>
@@ -313,8 +314,8 @@ import rockyConnect from '../assets/images/rocky-connect.jpg';
         </h2>
         <p class="cta-band__sub">Join 200,000+ developers and teams building with Torii.</p>
         <div class="cta-band__actions">
-          <a href="/pricing" class="btn btn--primary">Start building for free →</a>
-          <a href="/enterprise" class="btn btn--ghost">Talk to sales</a>
+          <a href={withBase("/pricing")} class="btn btn--primary">Start building for free →</a>
+          <a href={withBase("/enterprise")} class="btn btn--ghost">Talk to sales</a>
         </div>
       </div>
     </div>

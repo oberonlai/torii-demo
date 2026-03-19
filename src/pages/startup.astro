@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/paths';
 import workflowStartup from '../assets/images/workflow-startup.jpg';
 import mountainBuild from '../assets/images/mountain-build.jpg';
 ---
@@ -22,8 +23,8 @@ import mountainBuild from '../assets/images/mountain-build.jpg';
             Everything a startup needs to build AI products. Ship your first AI feature this week — not next quarter.
           </p>
           <div class="startup-hero__actions">
-            <a href="/pricing" class="btn btn--primary">Get started free →</a>
-            <a href="/" class="btn btn--ghost">Talk to our team</a>
+            <a href={withBase("/pricing")} class="btn btn--primary">Get started free →</a>
+            <a href={withBase("/")} class="btn btn--ghost">Talk to our team</a>
           </div>
         </div>
         <div class="startup-hero__badges gsap-stagger">
@@ -74,7 +75,7 @@ import mountainBuild from '../assets/images/mountain-build.jpg';
               Works with any LLM provider
             </li>
           </ul>
-          <a href="/developer" class="btn btn--primary">View developer docs →</a>
+          <a href={withBase("/developer")} class="btn btn--primary">View developer docs →</a>
         </div>
         <div class="split-section__image gsap-parallax">
           <img
@@ -124,7 +125,7 @@ import mountainBuild from '../assets/images/mountain-build.jpg';
         ))}
       </div>
       <p class="ecosystem-more">
-        + 180 more integrations available in the <a href="/" class="text-accent">Marketplace →</a>
+        + 180 more integrations available in the <a href={withBase("/")} class="text-accent">Marketplace →</a>
       </p>
     </div>
   </section>
@@ -165,7 +166,7 @@ import mountainBuild from '../assets/images/mountain-build.jpg';
               Custom domain with SSL in minutes
             </li>
           </ul>
-          <a href="/pricing" class="btn btn--primary">See pricing →</a>
+          <a href={withBase("/pricing")} class="btn btn--primary">See pricing →</a>
         </div>
       </div>
     </div>
@@ -232,7 +233,7 @@ import mountainBuild from '../assets/images/mountain-build.jpg';
       <div class="startup-cta__inner">
         <h2 class="text-h2" style="color: white;">Ready to build?</h2>
         <p style="color: rgba(255,255,255,0.75);">Start free. No credit card required.</p>
-        <a href="/pricing" class="btn" style="background: white; color: var(--color-accent); margin-top: var(--space-lg);">
+        <a href={withBase("/pricing")} class="btn" style="background: white; color: var(--color-accent); margin-top: var(--space-lg);">
           Get started free →
         </a>
       </div>

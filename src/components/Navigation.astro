@@ -1,18 +1,21 @@
 ---
 import { siteName, navLinks, githubStars } from '../data/site';
+import { withBase } from '../utils/paths';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const pathname = Astro.url.pathname;
 
 function isActive(href: string) {
-  if (href === '/') return pathname === '/';
-  return pathname.startsWith(href);
+  const fullHref = withBase(href);
+  if (fullHref === `${base}/`) return pathname === `${base}/`;
+  return pathname.startsWith(fullHref);
 }
 ---
 
 <header class="nav-header">
   <div class="nav-inner container">
     <!-- Wordmark -->
-    <a href="/" class="nav-logo" data-nav-link>
+    <a href={withBase("/")} class="nav-logo" data-nav-link>
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
         <rect x="2" y="18" width="24" height="4" rx="2" fill="#1248ff"/>
         <rect x="6" y="6" width="16" height="3" rx="1.5" fill="#111111"/>
@@ -39,7 +42,7 @@ function isActive(href: string) {
             </button>
             <div class="nav-dropdown__panel">
               {link.children.map((child: any) => (
-                <a href={child.href} data-nav-link class="nav-dropdown__item">
+                <a href={withBase(child.href)} data-nav-link class="nav-dropdown__item">
                   <span class="nav-dropdown__label">{child.label}</span>
                   {child.description && <span class="nav-dropdown__desc">{child.description}</span>}
                 </a>
@@ -48,7 +51,7 @@ function isActive(href: string) {
           </div>
         ) : (
           <a
-            href={link.href}
+            href={withBase(link.href)}
             data-nav-link
             class:list={['nav-link', { 'is-active': isActive(link.href) }]}
           >
@@ -60,13 +63,13 @@ function isActive(href: string) {
 
     <!-- Right actions -->
     <div class="nav-actions">
-      <a href="/" class="nav-github" aria-label="GitHub">
+      <a href={withBase("/")} class="nav-github" aria-label="GitHub">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
         </svg>
         <span>{githubStars} stars</span>
       </a>
-      <a href="/pricing" class="btn btn--primary nav-cta">
+      <a href={withBase("/pricing")} class="btn btn--primary nav-cta">
         Start building
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <path d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -87,14 +90,14 @@ function isActive(href: string) {
         <div class="nav-mobile__group">
           <span class="nav-mobile__heading">{link.label}</span>
           {link.children.map((child: any) => (
-            <a href={child.href} data-nav-link class="nav-mobile__link nav-mobile__link--sub">{child.label}</a>
+            <a href={withBase(child.href)} data-nav-link class="nav-mobile__link nav-mobile__link--sub">{child.label}</a>
           ))}
         </div>
       ) : (
-        <a href={link.href} data-nav-link class="nav-mobile__link">{link.label}</a>
+        <a href={withBase(link.href)} data-nav-link class="nav-mobile__link">{link.label}</a>
       )
     ))}
-    <a href="/pricing" class="btn btn--primary">Start building →</a>
+    <a href={withBase("/pricing")} class="btn btn--primary">Start building →</a>
   </div>
 </header>
 

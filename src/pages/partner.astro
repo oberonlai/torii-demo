@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/paths';
 import architectureEnterprise from '../assets/images/architecture-enterprise.jpg';
 ---
 
@@ -21,8 +22,8 @@ import architectureEnterprise from '../assets/images/architecture-enterprise.jpg
             Join our global partner ecosystem and help businesses unlock the power of AI. Access exclusive resources, co-marketing opportunities, and revenue sharing.
           </p>
           <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap;">
-            <a href="/" class="btn btn--primary">Become a partner →</a>
-            <a href="/" class="btn btn--ghost">View partner portal</a>
+            <a href={withBase("/")} class="btn btn--primary">Become a partner →</a>
+            <a href={withBase("/")} class="btn btn--ghost">View partner portal</a>
           </div>
         </div>
         <div class="partner-hero__image gsap-parallax">
@@ -89,7 +90,7 @@ import architectureEnterprise from '../assets/images/architecture-enterprise.jpg
               <li>Early API access and beta programs</li>
               <li>Co-marketing budget available</li>
             </ul>
-            <a href="/" class="btn btn--primary" style="margin-top: var(--space-xl);">Apply for Technology Partnership →</a>
+            <a href={withBase("/")} class="btn btn--primary" style="margin-top: var(--space-xl);">Apply for Technology Partnership →</a>
           </div>
           <div class="partner-type-card__right">
             <div class="partner-companies gsap-stagger">
@@ -116,7 +117,7 @@ import architectureEnterprise from '../assets/images/architecture-enterprise.jpg
               <li>Partner certification program</li>
               <li>Access to deal registration</li>
             </ul>
-            <a href="/" class="btn btn--primary" style="margin-top: var(--space-xl);">Apply for Solutions Partnership →</a>
+            <a href={withBase("/")} class="btn btn--primary" style="margin-top: var(--space-xl);">Apply for Solutions Partnership →</a>
           </div>
           <div class="partner-type-card__right">
             <div class="partner-companies gsap-stagger">
@@ -143,7 +144,7 @@ import architectureEnterprise from '../assets/images/architecture-enterprise.jpg
               <li>Co-branded marketing materials</li>
               <li>Quarterly enablement sessions</li>
             </ul>
-            <a href="/" class="btn btn--primary" style="margin-top: var(--space-xl);">Apply for Reseller Partnership →</a>
+            <a href={withBase("/")} class="btn btn--primary" style="margin-top: var(--space-xl);">Apply for Reseller Partnership →</a>
           </div>
           <div class="partner-type-card__right">
             <div class="partner-companies gsap-stagger">
@@ -238,8 +239,8 @@ import architectureEnterprise from '../assets/images/architecture-enterprise.jpg
           Join 500+ partners building with Torii across 60+ countries.
         </p>
         <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap; justify-content: center;">
-          <a href="/" class="btn" style="background: white; color: var(--color-accent);">Apply now →</a>
-          <a href="/" class="btn btn--ghost-white">Contact partnerships team</a>
+          <a href={withBase("/")} class="btn" style="background: white; color: var(--color-accent);">Apply now →</a>
+          <a href={withBase("/")} class="btn btn--ghost-white">Contact partnerships team</a>
         </div>
       </div>
     </div>

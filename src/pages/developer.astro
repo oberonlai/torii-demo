@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/paths';
 import abstractDeveloper from '../assets/images/abstract-developer.jpg';
 ---
 
@@ -21,10 +22,10 @@ import abstractDeveloper from '../assets/images/abstract-developer.jpg';
             Deeply explore AI application possibilities. Use advanced tooling to accelerate your development process and ship faster.
           </p>
           <div class="dev-hero__actions">
-            <a href="/" class="btn" style="background: white; color: var(--color-accent);">
+            <a href={withBase("/")} class="btn" style="background: white; color: var(--color-accent);">
               Start building →
             </a>
-            <a href="/" class="btn btn--ghost-white">
+            <a href={withBase("/")} class="btn btn--ghost-white">
               Read the docs
             </a>
           </div>
@@ -180,7 +181,7 @@ import abstractDeveloper from '../assets/images/abstract-developer.jpg';
               Replay any run for debugging
             </li>
           </ul>
-          <a href="/" class="btn btn--primary">Read the docs →</a>
+          <a href={withBase("/")} class="btn btn--primary">Read the docs →</a>
         </div>
         <div class="split-section__image">
           <!-- Debug panel mockup -->
@@ -262,7 +263,7 @@ import abstractDeveloper from '../assets/images/abstract-developer.jpg';
     <div class="container">
       <div class="dev-cta__inner">
         <h2 class="text-h2" style="color: white;">Start building today.</h2>
-        <a href="/" class="btn" style="background: white; color: var(--color-accent);">
+        <a href={withBase("/")} class="btn" style="background: white; color: var(--color-accent);">
           Get started free →
         </a>
       </div>

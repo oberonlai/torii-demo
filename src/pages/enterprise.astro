@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/paths';
 import architectureEnterprise from '../assets/images/architecture-enterprise.jpg';
 import mountainBuild from '../assets/images/mountain-build.jpg';
 import rockyConnect from '../assets/images/rocky-connect.jpg';
@@ -23,8 +24,8 @@ import rockyConnect from '../assets/images/rocky-connect.jpg';
             Deploy Torii in your environment with enterprise-grade security, compliance, and dedicated support — all backed by a 99.99% SLA.
           </p>
           <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap;">
-            <a href="/" class="btn btn--primary">Request a demo →</a>
-            <a href="/" class="btn btn--ghost">View security docs</a>
+            <a href={withBase("/")} class="btn btn--primary">Request a demo →</a>
+            <a href={withBase("/")} class="btn btn--ghost">View security docs</a>
           </div>
         </div>
         <div class="split-section__image gsap-parallax">
@@ -221,8 +222,8 @@ import rockyConnect from '../assets/images/rocky-connect.jpg';
           Talk to our enterprise team. We'll design the right solution for your needs.
         </p>
         <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap; justify-content: center;">
-          <a href="/" class="btn" style="background: white; color: #0b2a9a;">Request a demo →</a>
-          <a href="/" class="btn btn--ghost-white">Download security docs</a>
+          <a href={withBase("/")} class="btn" style="background: white; color: #0b2a9a;">Request a demo →</a>
+          <a href={withBase("/")} class="btn btn--ghost-white">Download security docs</a>
         </div>
       </div>
     </div>

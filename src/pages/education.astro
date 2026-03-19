@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/paths';
 import educationHero from '../assets/images/education-hero.jpg';
 ---
 
@@ -21,8 +22,8 @@ import educationHero from '../assets/images/education-hero.jpg';
             Torii helps students research, educators teach, and institutions deploy AI responsibly. Special pricing available for qualifying institutions.
           </p>
           <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap;">
-            <a href="/" class="btn btn--primary">Apply for education access →</a>
-            <a href="/" class="btn btn--ghost">Learn more</a>
+            <a href={withBase("/")} class="btn btn--primary">Apply for education access →</a>
+            <a href={withBase("/")} class="btn btn--ghost">Learn more</a>
           </div>
         </div>
         <div class="edu-hero__image gsap-parallax">
@@ -56,7 +57,7 @@ import educationHero from '../assets/images/education-hero.jpg';
             <li>Study guide generation</li>
             <li>Citation support</li>
           </ul>
-          <a href="/" class="btn btn--ghost" style="margin-top: var(--space-lg);">Get student access →</a>
+          <a href={withBase("/")} class="btn btn--ghost" style="margin-top: var(--space-lg);">Get student access →</a>
         </div>
 
         <!-- Educators -->
@@ -72,7 +73,7 @@ import educationHero from '../assets/images/education-hero.jpg';
             <li>Student progress insights</li>
             <li>Classroom AI workflows</li>
           </ul>
-          <a href="/" class="btn btn--primary" style="margin-top: var(--space-lg);">Get educator access →</a>
+          <a href={withBase("/")} class="btn btn--primary" style="margin-top: var(--space-lg);">Get educator access →</a>
         </div>
 
         <!-- Institutions -->
@@ -88,7 +89,7 @@ import educationHero from '../assets/images/education-hero.jpg';
             <li>FERPA compliance</li>
             <li>Admin dashboard</li>
           </ul>
-          <a href="/" class="btn btn--ghost" style="margin-top: var(--space-lg);">Contact our team →</a>
+          <a href={withBase("/")} class="btn btn--ghost" style="margin-top: var(--space-lg);">Contact our team →</a>
         </div>
       </div>
     </div>
@@ -164,8 +165,8 @@ import educationHero from '../assets/images/education-hero.jpg';
           Apply for our education program. Qualifying institutions get up to 80% off and dedicated onboarding support.
         </p>
         <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap; justify-content: center;">
-          <a href="/" class="btn" style="background: white; color: var(--color-accent);">Apply now →</a>
-          <a href="/" class="btn btn--ghost-white">Contact our education team</a>
+          <a href={withBase("/")} class="btn" style="background: white; color: var(--color-accent);">Apply now →</a>
+          <a href={withBase("/")} class="btn btn--ghost-white">Contact our education team</a>
         </div>
       </div>
     </div>

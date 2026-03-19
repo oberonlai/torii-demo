@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/paths';
 ---
 
 <BaseLayout
@@ -69,7 +70,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="pricing-card__price">
             <span class="pricing-card__amount">Free</span>
           </div>
-          <a href="/" class="btn pricing-card__cta pricing-card__cta--outline">Get started free</a>
+          <a href={withBase("/")} class="btn pricing-card__cta pricing-card__cta--outline">Get started free</a>
           <ul class="pricing-features">
             <li>200 message credits / month</li>
             <li>1 workspace</li>
@@ -97,7 +98,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="pricing-card__amount" data-monthly="59" data-annual="47">59</span>
             <span class="pricing-card__period">/ workspace / month</span>
           </div>
-          <a href="/" class="btn btn--primary pricing-card__cta">Start building →</a>
+          <a href={withBase("/")} class="btn btn--primary pricing-card__cta">Start building →</a>
           <ul class="pricing-features">
             <li>5,000 message credits / month</li>
             <li>1 team workspace</li>
@@ -124,7 +125,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="pricing-card__amount" data-monthly="159" data-annual="127">159</span>
             <span class="pricing-card__period">/ workspace / month</span>
           </div>
-          <a href="/" class="btn btn--black pricing-card__cta">Start building →</a>
+          <a href={withBase("/")} class="btn btn--black pricing-card__cta">Start building →</a>
           <ul class="pricing-features">
             <li>10,000 message credits / month</li>
             <li>1 team workspace</li>
@@ -143,8 +144,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p>Custom pricing for large organizations. SSO, audit logs, SLA, and dedicated support.</p>
         </div>
         <div class="enterprise-cta__actions">
-          <a href="/enterprise" class="btn btn--primary">Talk to sales →</a>
-          <a href="/" class="btn btn--ghost">View enterprise features</a>
+          <a href={withBase("/enterprise")} class="btn btn--primary">Talk to sales →</a>
+          <a href={withBase("/")} class="btn btn--ghost">View enterprise features</a>
         </div>
       </div>
     </div>
@@ -268,8 +269,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h3 class="text-h3">Not sure which plan fits?</h3>
         <p>Our team can help you choose the right plan for your use case, team size, and budget.</p>
         <div class="not-sure__actions">
-          <a href="/" class="btn btn--primary">Talk to sales →</a>
-          <a href="/" class="btn btn--ghost">Read documentation</a>
+          <a href={withBase("/")} class="btn btn--primary">Talk to sales →</a>
+          <a href={withBase("/")} class="btn btn--ghost">Read documentation</a>
         </div>
       </div>
     </div>
@@ -325,7 +326,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <div class="pricing-cta__inner">
         <h2 class="text-h2" style="color: white;">Can you build your next AI app?</h2>
-        <a href="/" class="btn" style="background: white; color: var(--color-accent);">
+        <a href={withBase("/")} class="btn" style="background: white; color: var(--color-accent);">
           Start for free →
         </a>
       </div>
